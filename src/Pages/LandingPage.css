@@ -1,0 +1,98 @@
+.general-wrapper{
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.LandingPage-Wrapper{
+  width: 100%;
+  height: 90vh;
+  background-color: #fff;
+  display: flex;
+  /* align-items: center; */
+  justify-content: flex-start;
+}
+.LandingPage-container{
+  max-width: 80%;
+  width: 100%;
+  height: 100%;
+  display: flex;
+ justify-content: space-between;
+  padding: 10px 0;
+}
+.button-div{
+  display: flex;
+  gap: 15px;
+  
+ 
+}
+ .SignUp-btn{
+  width: 120px;   
+  height: 45px;   
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  background-color: orange;
+ }
+ .SignUp-btn:hover{
+    background-color: white;
+    border: 1px solid orange;
+  }
+
+ .login-btn{
+  width: 120px;  
+  height: 45px;   
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+   border: 1px solid orange;
+ }
+ .login-btn:hover{
+    background-color: orange;
+    
+  }
+
+ .Img-Content-section{
+  width: 100%;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ background-image: url(./Images/Chef.jpg);
+ background-repeat: no-repeat;
+ background-position:  center;
+ position: relative;
+ }
+ .Text-content{
+  text-align: left;
+  /* font-size: 20px; */
+  position: absolute;
+  left: -70%;
+ }
+ 
+ 
+  
+ .Restaurant-section{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  
+ }
+ .Restaurant-section > h1 {
+  margin-bottom: 20px;
+ }
+ .restaurant-img-container{
+  width: 450px;
+  height: 450px;
+  border-radius: 50%;
+  border: 5px solid orange;
+  margin: 15px;
+  
+ }
+ .img-text{
+  text-align: center;
+  font-size: 18px;
+  background-color: aqua;
+ }
