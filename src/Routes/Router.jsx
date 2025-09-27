@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import LandingPage from "../Pages/LandingPage";
+import Layout from "../Layout/Layout";
 
 const Router = () => {
   return (
@@ -8,6 +9,7 @@ const Router = () => {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<LandingPage />}></Route>
+          <Route element={<Layout />}></Route>
 
           {/* <Rout>              </Rout> */}
         </Routes>
