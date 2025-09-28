@@ -1,11 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import { FaLongArrowAltLeft } from "react-icons/fa";
-import { NavLink } from 'react-router-dom';
+import { NavLink, useOutletContext } from "react-router-dom";
 import TheplaceImage from "../assets/TrinityPlace.jpg";
 import "./ThePlacePage.css";
+import ThePlaceProdApi from "./ThePlaceProdApi";
 
 const ThePlacePage = () => {
-  const [active, setActive] = useState('deliver');
+  const [active, setActive] = useState("deliver");
+  const { cartItems, setCartItems } = useOutletContext();
 
   return (
     <section className="the_place_hero">
@@ -33,20 +35,37 @@ const ThePlacePage = () => {
         <div className="the_place_hero_buttons">
           <div className="the_place_button_toggle_container">
             <button
-              className={`btn ${active === 'deliver' ? 'active' : ''}`}
-              onClick={() => setActive('deliver')}
+              className={`btn ${active === "deliver" ? "active" : ""}`}
+              onClick={() => setActive("deliver")}
             >
               Deliver now
             </button>
             <button
-              className={`btn ${active === 'pickup' ? 'active' : ''}`}
-              onClick={() => setActive('pickup')}
+              className={`btn ${active === "pickup" ? "active" : ""}`}
+              onClick={() => setActive("pickup")}
             >
               Pick up
             </button>
           </div>
         </div>
       </div>
+
+      <hr className="the_place_divider" />
+
+      <div className="the_place_info_row">
+        <div className="the_place_info_item">
+          <p className="info_label">Opening Time</p>
+          <p className="info_value">5:00am - 12:00pm</p>
+        </div>
+
+        <div className="the_place_info_item">
+          <p className="the_place_info_value">
+            <span className="the_place_info_label">Min Order:</span> ₦1,000
+          </p>
+        </div>
+      </div>
+
+      <ThePlaceProdApi cartItems={cartItems} setCartItems={setCartItems} />
     </section>
   );
 };
