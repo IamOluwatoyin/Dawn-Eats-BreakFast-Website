@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import LandingPage from "../Pages/LandingPage";
 import Layout from "../Layout/Layout";
+import ThePlacePage from "../Pages/ThePlacePage";
 
 const Router = () => {
   return (
@@ -9,7 +10,10 @@ const Router = () => {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<LandingPage />}></Route>
-          <Route path="/layout" element={<Layout />}></Route>
+          <Route element={<Layout />}>
+           <Route path="theplacepage" element={<ThePlacePage />} />
+          </Route>
+
 
           {/* <Rout>              </Rout> */}
         </Routes>

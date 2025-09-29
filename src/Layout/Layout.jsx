@@ -1,12 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import { Outlet } from "react-router-dom";
-import Header from "../Pages/Header.jsx"; 
+import Header from "../Pages/Header";
 
 const Layout = () => {
+  const [cartItems, setCartItems] = useState([]);
+
   return (
     <>
-      <Header />
-      <Outlet /> 
+      <Header cartCount={cartItems.length} />
+      <Outlet context={{ cartItems, setCartItems }} />
     </>
   );
 };
