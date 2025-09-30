@@ -44,8 +44,9 @@ const Header = ({ cartItems = [], setCartItems }) => {
       </header>
 
       {showModal && (
-          <CartModal1
+  <CartModal1
     cartItems={cartItems}
+    setCartItems={setCartItems}
     onClose={() => setShowModal(false)}
     onRemoveItem={(id) =>
       setCartItems((prev) => prev.filter((item) => item.id !== id))
@@ -69,7 +70,7 @@ const Header = ({ cartItems = [], setCartItems }) => {
       )
     }
   />
-      )}
+)}
     </>
   );
 };

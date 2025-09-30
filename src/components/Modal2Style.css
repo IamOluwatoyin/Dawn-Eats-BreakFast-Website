@@ -1,0 +1,142 @@
+.checkout_modal_overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: flex-end; /* Align to the right */
+  align-items: flex-start; /* Align to the top */
+  z-index: 1000;
+  padding: 20px; /* Add padding to prevent edge overlap */
+}
+
+.checkout_modal_container {
+  background: #f9f9f9;
+  border-radius: 8px 0 0 8px; /* Rounded corners only on left side */
+  width: 400px; /* Fixed width to match typical cart modal size */
+  height: 100vh; /* Full height to match cart modal */
+  padding: 20px;
+  position: relative;
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1); /* Shadow on the left side */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.checkout_modal_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 0 10px;
+}
+
+.checkout_modal_header h2 {
+  font-size: 18px;
+  color: #333;
+  margin: 0;
+  flex-grow: 1;
+  text-align: center;
+}
+
+.back_btn,
+.close_btn {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #dc3545;
+  padding: 0;
+  margin: 0 5px;
+}
+
+.checkout_modal_content {
+  flex-grow: 1;
+  overflow-y: auto; /* Enable scrolling if content exceeds height */
+  padding: 10px 0;
+}
+
+.checkout_options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.checkout_options span {
+  font-size: 14px;
+  color: #666;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.option_btn {
+  background: none;
+  border: none;
+  color: #dc3545;
+  font-size: 14px;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.checkout_instructions {
+  margin-bottom: 20px;
+}
+
+.checkout_instructions label {
+  font-size: 14px;
+  color: #666;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.checkout_instructions select {
+  width: 100%;
+  padding: 5px;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.order_summary {
+  margin-bottom: 20px;
+}
+
+.summary_item {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  color: #333;
+  padding: 5px 0;
+}
+
+.summary_item.total {
+  font-weight: bold;
+  border-top: 1px solid #ddd;
+  padding-top: 10px;
+}
+
+.checkout_modal_footer {
+  text-align: center;
+  padding-top: 20px;
+}
+
+.proceed_btn {
+  background: #ff9800;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.proceed_btn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}

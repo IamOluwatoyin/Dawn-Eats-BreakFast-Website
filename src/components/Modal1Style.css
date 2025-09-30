@@ -1,5 +1,4 @@
-/* overlay + container (right drawer with 5px gap like screenshot) */
-.cart_modal_overlay {
+.emeka_cart_modal_overlay {
   position: fixed;
   inset: 0;
   background: rgba(0,0,0,0.35);
@@ -7,30 +6,29 @@
   justify-content: flex-end;
   z-index: 999;
 }
-.cart_modal_container {
+.emeka_cart_modal_container {
   width: 380px;
   height: 100vh;
   background: #fff;
-  margin-right: 5px;            /* ✅ 5px space from the edge */
-  border-radius: 12px 0 0 12px; /* soft rounded left edge */
+  margin-right: 5px;            
+  border-radius: 12px 0 0 12px; 
   display: flex;
   flex-direction: column;
   padding: 14px;
   box-shadow: -2px 0 10px rgba(0,0,0,0.08);
 }
 
-/* header */
-.cart_modal_header {
+.emeka_cart_modal_header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin-bottom: 6px;
 }
-.cart_modal_header img {
+.emeka_cart_modal_header img {
   width: 58px;
   height: auto;
 }
-.close_btn {
+.emeka_modal_close_btn {
   background: transparent;
   border: none;
   font-size: 22px;
@@ -38,38 +36,35 @@
   color: #333;
 }
 
-/* top row labels like screenshot */
-.cart_modal_toprow {
+.emeka_cart_modal_toprow {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 6px 2px 10px;
   color: #575757;
 }
-.orders_title {
+.emeka_orders_title {
   font-size: 16px;
   margin: 0;
   font-weight: 600;
 }
-.items_label {
+.emeka_items_label {
   font-size: 12px;
 }
 
-/* list */
-.cart_modal_content {
+.emeka_cart_modal_content {
   flex: 1;
   overflow-y: auto;
   padding-right: 4px;
 }
-.empty_text {
+.emeka_empty_text {
   text-align: center;
   color: #9a9a9a;
   font-size: 14px;
   margin-top: 20px;
 }
 
-/* cart row structure: img | details | delete | qty */
-.cart_item {
+.emeka_cart_item {
   display: grid;
   grid-template-columns: 60px 1fr auto auto;
   gap: 10px;
@@ -77,16 +72,16 @@
   padding: 10px 0;
   border-bottom: 1px solid #f0f0f0;
 }
-.cart_item_image {
+.emeka_cart_item_image {
   width: 60px;
   height: 60px;
   object-fit: cover;
   border-radius: 6px;
 }
-.cart_item_details {
+.emeka_cart_item_details {
   overflow: hidden;
 }
-.cart_item_title {
+.emeka_cart_item_title {
   margin: 0 0 4px;
   font-size: 14px;
   font-weight: 500;
@@ -95,14 +90,13 @@
   text-overflow: ellipsis;
   overflow: hidden;
 }
-.cart_item_price {
+.emeka_cart_item_price {
   margin: 0;
   font-size: 13px;
   color: #444;
 }
 
-/* delete icon (red, small, to the right of details) */
-.delete_icon_btn {
+.emeka_delete_icon_btn {
   background: transparent;
   border: none;
   font-size: 18px;
@@ -111,17 +105,16 @@
   padding: 4px;
   line-height: 1;
 }
-.delete_icon_btn:hover {
+.emeka_delete_icon_btn:hover {
   color: #e24242;
 }
 
-/* qty controls (rightmost) */
-.cart_item_quantity {
+.emeka_cart_item_quantity {
   display: inline-flex;
   align-items: center;
   gap: 8px;
 }
-.qty_btn {
+.emeka_qty_btn {
   width: 26px;
   height: 26px;
   /* border: 1px solid #ddd; */
@@ -131,21 +124,20 @@
   cursor: pointer;
   font-size: 12px;
 }
-.qty_value {
+.emeka_qty_value {
   min-width: 18px;
   text-align: center;
   font-size: 14px;
 }
 
-/* footer buttons like screenshot */
-.cart_modal_footer {
+.emeka_cart_modal_footer {
   display: flex;
   flex-direction: column;
   gap: 10px;
   padding-top: 12px;
   border-top: 1px solid #f0f0f0;
 }
-.proceed_btn {
+.emeka_proceed_btn {
   padding: 12px 0;
   background: #ff7f00;
   color: #fff;
@@ -154,7 +146,7 @@
   font-size: 16px;
   cursor: pointer;
 }
-.cancel_btn {
+.emeka_cancel_btn {
   padding: 12px 0;
   background: #fff;
   border: 1.5px solid #ff7f00;
