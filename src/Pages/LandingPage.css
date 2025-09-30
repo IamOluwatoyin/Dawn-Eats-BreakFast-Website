@@ -1,52 +1,58 @@
 .general-wrapper{
-  width: 100%;
+  /* width: 100%; */
   height: auto;
   display: flex;
   flex-direction: column;
+  /* background-color: chocolate; */
 }
 
 .LandingPage-Wrapper{
   width: 100%;
-  height: 90vh;
+  height: 95vh;
   background-color: #fff;
   display: flex;
-  /* align-items: center; */
-  justify-content: flex-start;
+  align-items: stretch;
+  /* justify-content: center; */
+  flex-direction: column;
+  /* background-color: blue; */
 }
+
 .LandingPage-container{
-  max-width: 80%;
   width: 100%;
-  height: 100%;
+  height: 170px;
   display: flex;
- justify-content: space-between;
-  padding: 10px 0;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  /* background-color: aquamarine; */
+  padding-right: 20px;
 }
+
 .button-div{
   display: flex;
-  gap: 15px;
-  
+  gap: 15px; 
  
 }
  .SignUp-btn{
   width: 120px;   
-  height: 45px;   
-  border: none;
-  border-radius: 6px;
+  height: 45px; 
+  border: none;  
+  border-radius: 10px;
   cursor: pointer;
   background-color: orange;
  }
+
  .SignUp-btn:hover{
     background-color: white;
-    border: 1px solid orange;
+    border: 2px solid orange;
   }
 
  .login-btn{
   width: 120px;  
   height: 45px;   
-  border: none;
-  border-radius: 6px;
+  border-radius: 10px;
   cursor: pointer;
-   border: 1px solid orange;
+   border: 2px solid orange;
  }
  .login-btn:hover{
     background-color: orange;
@@ -55,23 +61,42 @@
 
  .Img-Content-section{
   width: 100%;
+  min-height: 70vh;
  display: flex;
  align-items: center;
- justify-content: center;
- background-image: url(./Images/Chef.jpg);
- background-repeat: no-repeat;
- background-position:  center;
- position: relative;
+ justify-content: space-between;
+  padding: 20px;
  }
  .Text-content{
+  max-width: 50%;
   text-align: left;
-  /* font-size: 20px; */
-  position: absolute;
-  left: -70%;
+  position: static;
+  flex: 1;
+  padding: 10px;
+ }
+ .image-container{
+  display: flex;
+  justify-content: center;
+  flex: 1;
+  width: 50%;
+  justify-content: flex-start;
+   /* push image toward the text side */
+  /* align-items: flex-start;    */
+    /* lift image upward */
+  padding-left: 0px;          /* fine tune closeness to text */
+
  }
  
- 
-  
+ .Img-Content-section > img{
+     max-width: 380px;
+  width: 100%;
+   background-repeat: no-repeat;
+ background-position:  center;
+  position: relative;
+  /* top: 80%; */
+  /* bottom: 50%; */
+  /* right: 50%; */
+ }
  .Restaurant-section{
   width: 100%;
   display: flex;
@@ -83,16 +108,174 @@
  .Restaurant-section > h1 {
   margin-bottom: 20px;
  }
+ .Restaurant-content{
+  display: flex;
+  flex-direction: column;
+
+ }
+ .Restaurant-image-holder{
+  width: 100%;
+  display: flex;
+  gap: 30px;
+ }
  .restaurant-img-container{
   width: 450px;
   height: 450px;
   border-radius: 50%;
   border: 5px solid orange;
-  margin: 15px;
+  margin: 20px; 
   
+ }
+
+ .Resuarant-span{
+    display: flex;
+    gap: 15px;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 30px;
  }
  .img-text{
   text-align: center;
-  font-size: 18px;
-  background-color: aqua;
+  font-size: 30px;
+  font-weight: 700;
+  /* background-color: aqua; */
  }
+ 
+ .BreakFast-choice-section{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 15%;
+ }
+
+ .carouselWrapper{
+  width: 100%;
+ }
+
+ .carouselContainer{
+  display: flex;
+  transition: transform 0.6s ease-in-out;
+ }
+
+ .dispacth-container{
+  width: 100%;
+  display: flex;
+  gap: 40px;
+}
+.dispatchImg-holder{
+  width: 50%;
+  padding: 30px;
+}
+.dispatchImg-holder > img{
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+}
+.dispatch-content{
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  
+}
+
+.dispatch-content > h1{
+   font-weight: 700;
+   font-family: sans-serif;
+   margin-bottom: 28px;
+}
+
+.dispatch-content > p {
+  font-size: 20px;
+  font-weight: 200;
+  margin-bottom: 28px;
+}
+ .dispatch-btn{
+   width: 120px;   
+  height: 45px; 
+  border: none;  
+  border-radius: 10px;
+  cursor: pointer;
+  background-color: orange;
+}
+
+.dispatch-btn:hover{
+   background-color: white;
+    border: 2px solid orange;
+}
+
+
+
+.logistics-container{
+  width: 100%;
+  display: flex;
+  gap: 15px;
+}
+.logistics-content{
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 50px;
+}
+
+ .logistics-content > h1{
+   font-weight: 700;
+   font-family: sans-serif;
+   margin-bottom: 28px;
+ }
+
+  .logistics-content > p{
+   font-size: 20px;
+    font-weight: 200;
+   margin-bottom: 28px;
+  }
+  
+
+.logistics-btn-holder{
+  display: flex;
+  gap: 20px;
+}
+
+.logistics-btn1{
+   width: 120px;   
+  height: 45px; 
+  border: none;  
+  border-radius: 10px;
+  cursor: pointer;
+  background-color: orange;
+}
+
+.logistics-btn1:hover{
+    background-color: white;
+    border: 2px solid orange;
+}
+
+.logistics-btn2{
+  width: 120px;   
+  height: 45px; 
+  border: none;  
+  border-radius: 10px;
+  cursor: pointer;
+  background-color: white;
+  border: 3px solid orange;
+}
+
+.logistics-btn2:hover {
+    background-color: orange;
+    
+}
+
+.logisticsImg-holder{
+  width: 50%;
+  padding: 30px;
+}
+
+.logisticsImg-holder > img {
+  width: 80%;
+  height: 85%;
+  border-radius: 10px;
+  background-repeat: no-repeat;
+}
