@@ -29,11 +29,19 @@
   height: auto;
 }
 .emeka_modal_close_btn {
-  background: transparent;
-  border: none;
+  background-color: white;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #ff9800;
   font-size: 22px;
   cursor: pointer;
-  color: #333;
+  color: #ff9800;
+  padding: 0;
+  margin: 0 5px;
 }
 
 .emeka_cart_modal_toprow {
@@ -100,13 +108,13 @@
   background: transparent;
   border: none;
   font-size: 18px;
-  color: #ff5b5b;
+  color: #ff9800;
   cursor: pointer;
   padding: 4px;
   line-height: 1;
 }
 .emeka_delete_icon_btn:hover {
-  color: #e24242;
+  color: #ff7f00;
 }
 
 .emeka_cart_item_quantity {
@@ -115,19 +123,19 @@
   gap: 8px;
 }
 .emeka_qty_btn {
-  width: 26px;
+  width: 18px;
   height: 26px;
   /* border: 1px solid #ddd; */
   border: none;
-  /* background: #f6f6f6; */
+  background-color: #fff;
   border-radius: 6px;
   cursor: pointer;
-  font-size: 12px;
+  font-size: 22px;
 }
 .emeka_qty_value {
   min-width: 18px;
   text-align: center;
-  font-size: 14px;
+  font-size: 12px;
 }
 
 .emeka_cart_modal_footer {
@@ -138,20 +146,23 @@
   border-top: 1px solid #f0f0f0;
 }
 .emeka_proceed_btn {
-  padding: 12px 0;
-  background: #ff7f00;
-  color: #fff;
+  background: #ff9800;
+  color: white;
+  padding: 10px 20px;
   border: none;
   border-radius: 8px;
-  font-size: 16px;
+  font-size: 12px;
   cursor: pointer;
+  width: 100%;
+  margin-bottom: 10px;
 }
 .emeka_cancel_btn {
-  padding: 12px 0;
-  background: #fff;
-  border: 1.5px solid #ff7f00;
-  color: #333;
+  background: white;
+  color: black;
+  padding: 10px 20px;
+  border: 2px solid #ff9800;
   border-radius: 8px;
-  font-size: 16px;
+  font-size: 12px;
   cursor: pointer;
+  width: 100%;
 }

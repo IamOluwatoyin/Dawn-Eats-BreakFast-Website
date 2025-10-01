@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import cartmodalimage from "../assets/headerlogo.JPG";
 import { IoCloseOutline } from "react-icons/io5";
 import { RiDeleteBin6Line } from "react-icons/ri";
-import CheckoutModal from "../components/Modal2"; // Import the updated component
+import CheckoutModal from "../components/Modal2"; 
 import "./Modal1Style.css";
 
 const CartModal = ({
@@ -20,19 +20,21 @@ const CartModal = ({
   const dec = (id) => onDecreaseQty && onDecreaseQty(id);
 
   const handleProceed = () => {
-    setShowCheckoutModal(true);
+    if (cartItems.length > 0) {
+      setShowCheckoutModal(true);
+    }
   };
 
   const handleConfirmOrder = () => {
-    setCartItems([]); // Clear cart
+    setCartItems([]); 
     setShowCheckoutModal(false);
-    onClose(); // Close both modals
+    onClose(); 
     alert("Order confirmed!");
   };
 
   const handleBackToCart = () => {
-    setShowCheckoutModal(false); // Close CheckoutModal
-    // No need to explicitly reopen CartModal since it's already open
+    setShowCheckoutModal(false); 
+    
   };
 
   return (
@@ -44,7 +46,7 @@ const CartModal = ({
         >
           <div className="emeka_cart_modal_header">
             <img src={cartmodalimage} alt="cartLogo" />
-            <button className="emeka_close_btn" onClick={onClose}>
+            <button className="emeka_modal_close_btn" onClick={onClose}>
               <IoCloseOutline />
             </button>
           </div>
@@ -93,7 +95,10 @@ const CartModal = ({
           </div>
 
           <div className="emeka_cart_modal_footer">
-            <button className="emeka_proceed_btn" onClick={handleProceed}>
+            <button className="emeka_proceed_btn" 
+            onClick={handleProceed}
+            disabled={cartItems.length === 0} 
+            >
               Proceed
             </button>
             <button className="emeka_cancel_btn" onClick={onClose}>
@@ -108,10 +113,10 @@ const CartModal = ({
           cartItems={cartItems}
           onClose={() => {
             setShowCheckoutModal(false);
-            onClose(); // Close both if needed, but back should not trigger this
+            onClose(); 
           }}
           onProceed={handleConfirmOrder}
-          onBack={handleBackToCart} // Pass the back callback
+          onBack={handleBackToCart} 
         />
       )}
     </>
