@@ -1,55 +1,9 @@
 import React, { useEffect, useState } from "react";
 import "./LandingPageCard.css";
+import { LandingPageData } from "../utils";
 
 const LandingPageCard = () => {
-  const LandingPageData = [
-    {
-      id: 1,
-      image: "/Images/Scrambledeggsandtoast.jpg",
-      text: "Scrambledeggsandtoast"
-    },
-    {
-      id: 2,
-      image: "/Images/Custard.jpg",
-       text: "Akara(bean-cake) pap"
-    },
-    {
-      id: 3,
-      image: "/Images/Smoothies.jpg",
-       text: "Smoothies"
-    },
-    {
-      id: 4,
-      image: "/Images/Espresso-coffee.jpg",
-       text: "Espresso-coffee"
-    },
-    {
-      id: 5,
-      image: "/Images/Oatmeal-blueberries.jpg",
-       text: "Oatmeal, blueberries and granola"
-    },
-
-     {
-      id: 5,
-      image: "/Images/Pancakes.jpg",
-       text: "Scrambled Eggs"
-    },
-    {
-      id: 6,
-      image: "/Images/Greek-youghurt-berries.jpg",
-       text: "Greek youghurt and berries"
-    },
-    {
-      id: 7,
-      image: "/Images/Toastbread.jpg",
-       text: "Toast Bread and Honey"
-    },
-    {
-      id: 8,
-      image: "/Images/Pastries.jpg",
-       text: "Pastries"
-    },
-  ];
+  
   const [carouselImg, setCarouselImg] = useState(0);
   const [direction, setDirection] = useState(1); //1 = right -1=left
   const imageWidth = 460;
