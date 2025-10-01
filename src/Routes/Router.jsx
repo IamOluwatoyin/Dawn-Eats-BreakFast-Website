@@ -5,12 +5,18 @@ import DinePage from "../Pages/DinePage";
 import LandingPage from "../Pages/LandingPage";
 import Layout from "../Layout/Layout";
 import ThePlacePage from "../Pages/ThePlacePage";
+import Signup from "../Auth/Signup";
+import Signin from "../Auth/Signin";
+import VerifyEmail from "../Auth/VerifyEmail";
 
 const Router = () => {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<LandingPage />} />
+        <Route path="/Signin" element={<Signin/>} />
+        <Route path="/Signup" element={<Signup/>} />
+        <Route path="/VerifyEmail" element={<VerifyEmail/>} />
         <Route element={<Layout />}>
           <Route path="theplacepage" element={<ThePlacePage />} />
           <Route path="dinepage" element={<DinePage />} />
