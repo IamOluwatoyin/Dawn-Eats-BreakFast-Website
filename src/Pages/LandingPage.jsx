@@ -19,12 +19,7 @@ const LandingPage = () => {
 
   const [opensignUpModal, setopensignUpModal] = useState(false);
   const [opensignInModal, setopensignInModal] = useState(false);
-  const closeSignInModal = ()=>{
-    
-  }
-  const closeSignUpModal = ()=>{
-    
-  }
+
 
   return (
 
