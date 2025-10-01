@@ -4,24 +4,10 @@ import LandingPageCard from "../Components/LandingPageCard";
 import Footer from "../Components/Footer";
 import Signup from "../Auth/Signup";
 import Signin from "../Auth/Signin";
+import { Content } from "../utils";
 
 const LandingPage = () => {
-  const Content = [
-    {
-      h1: "Your morning, your \nway ",
-      span: "Choose from local favourites or \nhealthy picks, delivered fresh to your \ndoor",
-    },
 
-    {
-      h1: "Start your day right",
-      span: "Fresh healthy breakfasts \ndelivered on time every \nmorning",
-    },
-
-    {
-      h1: "No more skipped \nbreakfasts",
-      span: "Order in seconds, enjoy in \nminutes. simple fast and reliable",
-    },
-  ];
   const [textIndex, setTextIndex] = useState(0);
 
   useEffect(() => {
@@ -35,6 +21,7 @@ const LandingPage = () => {
   const [opensignInModal, setopensignInModal] = useState(false);
 
   return (
+
     <div className="general-wrapper">
       <div className="LandingPage-Wrapper">
         <section className="LandingPage-container">
@@ -43,17 +30,43 @@ const LandingPage = () => {
           </div>
 
           <div className="button-div">
-            <button className="SignUp-btn" onClick={()=>setopensignUpModal(true)}>Sign Up</button>
-            <button className="login-btn" onClick={()=>setopensignInModal(true)}>Sign In</button>
+            <button
+              className="SignUp-btn"
+              onClick={() => {
+                setopensignUpModal(true);
+                setopensignInModal(false);
+              }}
+            >
+              Sign Up
+            </button>
+            <button
+              className="login-btn"
+              onClick={() => {
+                setopensignInModal(true);
+                setopensignUpModal(false);
+              }}
+            >
+              Sign In
+            </button>
           </div>
-           {
-        opensignUpModal && <Signup onclose={()=>setopensignUpModal(false)} />
-      }
-
-      {
-        opensignInModal && <Signin onclose={()=>setopensignInModal(false)} />
-      }
-          
+          {opensignUpModal && (
+            <Signup 
+              onclose={() => setopensignUpModal(false)} 
+              onSwitchToSignin={() => {
+                setopensignUpModal(false);
+                setopensignInModal(true);
+              }}
+            />
+          )}
+          {opensignInModal && (
+            <Signin 
+              onclose={() => setopensignInModal(false)}
+              onSwitchToSignup={() => {
+                setopensignInModal(false);
+                setopensignUpModal(true);
+              }}
+            />
+          )}
         </section>
 
         <article className="Img-Content-section">
@@ -159,8 +172,24 @@ const LandingPage = () => {
             Your breakfast is on the way before you know it.
           </p>
           <div className="logistics-btn-holder">
-            <button className="logistics-btn1">Sign up</button>
-            <button className="logistics-btn2">Sign in</button>
+            <button 
+              className="logistics-btn1"
+              onClick={() => {
+                setopensignUpModal(true);
+                setopensignInModal(false);
+              }}
+            >
+              Sign up
+            </button>
+            <button 
+              className="logistics-btn2"
+              onClick={() => {
+                setopensignInModal(true);
+                setopensignUpModal(false);
+              }}
+            >
+              Sign in
+            </button>
           </div>
         </div>
 
@@ -205,8 +234,6 @@ const LandingPage = () => {
       </section>
 
       <Footer />
-     
-
     </div>
   );
 };

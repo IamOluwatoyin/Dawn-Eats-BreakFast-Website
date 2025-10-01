@@ -1,6 +1,5 @@
-.Signin-wrapper{
- width: 100%;
-  height: 95vh;
+.Signin-wrapper {
+  width: 100%;
   display: flex;
   align-items: center;
   position: fixed;
@@ -13,35 +12,32 @@
   padding: 0 1rem;
 }
 
-.signin-holder{
-   position: relative;
-   background-color: #fff;
+.signin-holder {
+  position: relative;
+  background-color: #fff;
   border-radius: 0.75rem;
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
-              0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
   width: 100%;
   max-width: 35rem;
   padding: 1.5rem;
   position: relative;
   /* overflow-y: hidden; */
-display: flex;
-flex-direction: column;
-align-items: center;
-
- height: 60vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.img-logo{
+.img-logo {
   position: absolute;
   top: 1rem;
   left: 3rem;
 }
-.modal-cancel2{
+.modal-cancel2 {
   position: absolute;
   top: 1rem;
   right: 3rem;
   color: orange;
   font-size: 30px;
   cursor: pointer;
-  
 }
