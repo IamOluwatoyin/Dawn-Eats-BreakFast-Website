@@ -96,60 +96,34 @@ const DinePage = () => {
           <div className="footer-section">
             <h3>Let's do it together</h3>
             <ul>
-              <li>
-                <a href="#">Careers</a>
-              </li>
-              <li>
-                <a href="#">OwenEats for partners</a>
-              </li>
-              <li>
-                <a href="#">Couriers</a>
-              </li>
-              <li>
-                <a href="#">OwenEats partners</a>
-              </li>
+              <li>Careers</li>
+              <li>OwenEats for partners</li>
+              <li>Couriers</li>
+              <li>OwenEats partners</li>
             </ul>
           </div>
           <div className="footer-section">
             <h3>Locations</h3>
             <ul>
-              <li>
-                <a href="#">Abeokuta</a>
-              </li>
-              <li>
-                <a href="#">Festac</a>
-              </li>
-              <li>
-                <a href="#">Amuwo Odofin</a>
-              </li>
-              <li>
-                <a href="#">Lekki</a>
-              </li>
+              <li>Abeokuta</li>
+              <li>Festac</li>
+              <li>Amuwo Odofin</li>
+              <li>Lekki</li>
             </ul>
           </div>
           <div className="footer-section">
             <h3>Legal</h3>
             <ul>
-              <li>
-                <a href="#">Privacy policy</a>
-              </li>
-              <li>
-                <a href="#">Terms of use</a>
-              </li>
+              <li>Privacy policy</li>
+              <li>Terms of use</li>
             </ul>
           </div>
           <div className="footer-section">
             <h3>Contact Detail</h3>
             <ul>
-              <li>
-                <a href="#">+234 9062771345</a>
-              </li>
-              <li>
-                <a href="#">Owentech@gmail.com</a>
-              </li>
-              <li>
-                <a href="#">Address - 72 Wilmer Crescent</a>
-              </li>
+              <li>+234 9062771345</li>
+              <li>Owentech@gmail.com</li>
+              <li>Address - 72 Wilmer Crescent</li>
             </ul>
           </div>
         </div>

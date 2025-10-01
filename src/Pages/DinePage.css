@@ -21,6 +21,7 @@
 .logo {
   width: 50%;
   height: 80px;
+  cursor: pointer;
   /* padding: 8px 12px; */
 }
 
@@ -331,15 +332,13 @@
 
 .footer-section ul li {
   margin-bottom: 8px;
-}
-
-.footer-section ul li a {
   color: #666;
   text-decoration: none;
   font-size: 14px;
+  cursor: pointer;
 }
 
-.footer-section ul li a:hover {
+.footer-section ul li:hover {
   color: #ff6b35;
 }
 
