@@ -33,6 +33,12 @@ const LandingPage = () => {
 
   const [opensignUpModal, setopensignUpModal] = useState(false);
   const [opensignInModal, setopensignInModal] = useState(false);
+  const closeSignInModal = ()=>{
+    
+  }
+  const closeSignUpModal = ()=>{
+    
+  }
 
   return (
     <div className="general-wrapper">
@@ -43,8 +49,8 @@ const LandingPage = () => {
           </div>
 
           <div className="button-div">
-            <button className="SignUp-btn" onClick={()=>setopensignUpModal(true)}>Sign Up</button>
-            <button className="login-btn" onClick={()=>setopensignInModal(true)}>Sign In</button>
+            <button className="SignUp-btn" onClick={()=>setopensignUpModal(!opensignUpModal)}>Sign Up</button>
+            <button className="login-btn" onClick={()=>setopensignInModal(!opensignInModal)}>Sign In</button>
           </div>
            {
         opensignUpModal && <Signup onclose={()=>setopensignUpModal(false)} />

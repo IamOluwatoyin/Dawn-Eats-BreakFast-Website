@@ -3,12 +3,24 @@ import "./Signup.css"
 import { MdOutlineCancel, MdOutlineMail  } from "react-icons/md"
 import { NavLink, useNavigate } from 'react-router-dom'
 import VerifyEmail from './VerifyEmail'
+import Signin from './Signin'
 
 const Signup = ({onclose}) => {
+   const [opensignInModal, setopensignInModal] = useState(false);
+
    const navigate = useNavigate(
      (<VerifyEmail/>)
    )
+
+
   return (
+    <>
+     {
+            opensignInModal ? (<Signin onclose={()=>setopensignInModal(true)}  />) : (
+
+          
+              
+   
     <div  className='form-wrapper'>
 
       <form className='form-holder'>
@@ -72,7 +84,7 @@ const Signup = ({onclose}) => {
         <div style={{display:"flex",justifyContent:"center",gap:"8px", marginTop:"20px"}}>
           <p style={{color:"grey"}}>Have an account?</p>
          
-          <NavLink to= {"/Signin"}style={{color:"orange", textDecoration:"none"}}> Sign in</NavLink>
+          <p style={{color:"orange", textDecoration:"none",cursor:"pointer"}} onClick={()=>setopensignInModal(!opensignInModal)}> Sign in </p>
         </div>
         
         
@@ -80,6 +92,9 @@ const Signup = ({onclose}) => {
      
      
     </div>
+      )
+          }
+     </>
   )
 }
 

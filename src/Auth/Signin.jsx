@@ -17,8 +17,8 @@ const Signin = ({onclose}) => {
                    <MdOutlineCancel />
                 </div>
                 <div style={{display:"flex", gap:"15px", flexDirection:"column", textAlign:"center", margin:"20px"}}>
-          <h1>Sign Up</h1>
-        <span style={{color:"grey"}}>sign up to continue</span>
+          <h1>Sign in</h1>
+        <span style={{color:"grey"}}>sign in to continue</span>
         </div>
         
          <div style={{width:"100%", display:"flex", flexDirection:"column", gap:"8px"}} >
@@ -34,13 +34,13 @@ const Signin = ({onclose}) => {
         </div>
 
         <div style={{width:"100%", marginTop:"20px", display:"flex", flexDirection:"column", gap:"8px"}}> 
-            <button style={{width:"100%", height:"40px", borderRadius:"8px", padding:"10px"}}>Sign Up</button>
+            <button style={{width:"100%", height:"40px", borderRadius:"8px", padding:"10px"}}>Sign in</button>
          </div>
 
           <div style={{display:"flex",justifyContent:"center",gap:"8px", marginTop:"20px"}}>
                    <p style={{color:"grey"}}>New to DawnEats?</p>
                   
-                   <NavLink to= {"/Signup"}style={{color:"orange", textDecoration:"none"}}> Sign up</NavLink>
+                   <p style={{color:"orange", textDecoration:"none"}}onClick={()=>setopensignUpModal(!opensignUpModal)}> Sign up</p>
                  </div>
                  
 
