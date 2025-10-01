@@ -9,6 +9,7 @@ const Signin = ({ onclose, onSwitchToSignup }) => {
       <form className="signin-holder">
         <div className="img-logo">
           <img src="/Images/smallLogo.jpg" alt="logo" />
+    
         </div>
 
         <div onClick={() => onclose()} className="modal-cancel2">
@@ -92,6 +93,7 @@ const Signin = ({ onclose, onSwitchToSignup }) => {
           </div>
         </div>
 
+       
         <div
           style={{
             width: "100%",

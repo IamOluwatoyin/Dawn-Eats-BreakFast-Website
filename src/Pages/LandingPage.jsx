@@ -19,6 +19,12 @@ const LandingPage = () => {
 
   const [opensignUpModal, setopensignUpModal] = useState(false);
   const [opensignInModal, setopensignInModal] = useState(false);
+  const closeSignInModal = ()=>{
+    
+  }
+  const closeSignUpModal = ()=>{
+    
+  }
 
   return (
 
@@ -30,6 +36,7 @@ const LandingPage = () => {
           </div>
 
           <div className="button-div">
+  
             <button
               className="SignUp-btn"
               onClick={() => {
@@ -48,6 +55,7 @@ const LandingPage = () => {
             >
               Sign In
             </button>
+
           </div>
           {opensignUpModal && (
             <Signup 

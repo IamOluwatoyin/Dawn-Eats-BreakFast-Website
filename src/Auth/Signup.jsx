@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import "./Signup.css";
 import { MdOutlineCancel, MdOutlineMail } from "react-icons/md";
@@ -117,7 +118,7 @@ const Signup = ({ onclose, onSwitchToSignin }) => {
                 />
               </div>
             </div>
-
+       
             <div
               style={{
                 width: "100%",
