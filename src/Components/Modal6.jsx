@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { IoCloseOutline } from "react-icons/io5";
-import { GrStatusGood } from "react-icons/gr"; 
 import { MdOutlineDone } from "react-icons/md";
 import logo from "../assets/headerlogo.JPG"; 
 import "./Modal6Style.css";
