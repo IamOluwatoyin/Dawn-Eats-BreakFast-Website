@@ -1,6 +1,8 @@
 .header {
   background: white;
   width: 100%;
+  position: relative;
+  top: 10px;
 
   padding: 12px 20px;
   /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
@@ -96,7 +98,18 @@
   justify-content: center;
   cursor: pointer;
 }
-
+.profile-dropdown {
+  width: 200px;
+  height: 22vh;
+  border-radius: 8px;
+  border: 0.5px solid black;
+  margin-right: 100px;
+  position: absolute;
+  top: 40px;
+  /* right: -90px; */
+  bottom: 0px;
+  background-color: white;
+}
 .cart-icon {
   /* background: #ff6b35; */
   color: #ff6b35;
@@ -108,11 +121,13 @@
   /* background: #ff6b35; */
   font-size: 20px;
   color: #ff6b35;
+  position: relative;
 }
 
 .back-button {
   padding: 40px;
   display: flex;
+  margin-top: 40px;
   align-items: center;
   color: #666;
   text-decoration: none;
@@ -121,6 +136,7 @@
 
 .back-arrow {
   margin-right: 8px;
+  /* margin-top: 40px; */
   display: flex;
   font-size: 20px;
   align-items: center;
@@ -129,9 +145,13 @@
 }
 .hero-section {
   position: relative;
+  /* margin-top: 100px; */
   height: 300px;
-  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 300"><rect fill="%23f0f0f0" width="800" height="300"/></svg>');
+  background: url("./public/images/Scrambledeggsandtoast.jpg");
   background-size: cover;
+  object-fit: cover;
+  background-repeat: no-repeat;
+  background-position: center;
   border-radius: 15px;
   margin: 0 20px;
   overflow: hidden;
@@ -188,37 +208,50 @@
 .action-buttons {
   display: flex;
   gap: 20px;
-  border: 1px solid #ff6b35;
-  border-radius: 8px;
-  padding: 10px;
   width: 20%;
-  height: 60px;
+  padding: 15px;
+  background: white;
+  border: 1px solid #ff6b35;
+  border-radius: 10px;
 }
 
 .deliver-now {
   background: #ff6b35;
-  width: 45%;
-  padding: 10px;
-  border-radius: 8px;
-  height: 35px;
-  cursor: pointer;
+  width: 50%;
   border: none;
+  height: 40px;
   color: white;
-  border-color: #ff6b35;
+  border-radius: 5px;
 }
 
 .pick-up {
   background: white;
-  padding: 10px;
-  cursor: pointer;
-  width: 45%;
-  border-radius: 8px;
-  height: 35px;
+  height: 40px;
   border: none;
+  width: 50%;
   color: #ff6b35;
-  border-color: #ff6b35;
+  border-radius: 5px;
 }
 
+.deliver-now.active {
+  background: #ff6b35;
+  color: white;
+}
+
+.pick-up.active {
+  background: #ff6b35;
+  color: white;
+}
+
+.deliver-now:not(.active) {
+  background: white;
+  color: #ff6b35;
+}
+
+.pick-up:not(.active) {
+  background: white;
+  color: #ff6b35;
+}
 .opening-hours {
   padding: 20px;
   display: flex;

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./DinePage.css";
 import {
   FaSearch,
@@ -15,8 +15,11 @@ import {
 } from "react-icons/fa6";
 import { MdShoppingCart } from "react-icons/md";
 import { SiGmail } from "react-icons/si";
+import Modal4 from "../Components/Modal4";
 
 const DinePage = () => {
+  const [toggleswitch, setToggleSwitch] = useState("deliver");
+  const [profileOpen, setProfileOpen] = useState(false);
   return (
     <>
       <header className="header">
@@ -42,7 +45,15 @@ const DinePage = () => {
               <MdShoppingCart />
             </div>
             <div className="profile-icon">
-              <FaUserAlt />
+              <FaUserAlt onClick={() => setProfileOpen(true)} />
+              {profileOpen ? (
+                <div
+                  className="profile-dropdown"
+                  onMouseLeave={() => setProfileOpen(false)}
+                >
+                  <Modal4 />
+                </div>
+              ) : null}
             </div>
           </div>
         </div>
@@ -56,12 +67,12 @@ const DinePage = () => {
       </a>
 
       <div className="hero-section">
-        <div className="delivery-time">
+        <span className="delivery-time">
           <span className="clock-icon">
             <FaRegClock className="searchicon" />
           </span>
           30 - 45 mins
-        </div>
+        </span>
       </div>
 
       <div className="restaurant-info">
@@ -69,14 +80,26 @@ const DinePage = () => {
           <h1 className="restaurant-name">
             The Place - <FaLocationDot className="searchicon" /> Wilmer
             <span className="rating">
-              <span class="star">⭐</span>
+              <span className="star">⭐</span>
               4.20
             </span>
           </h1>
         </div>
         <div className="action-buttons">
-          <button className="deliver-now">Deliver now</button>
-          <button className="pick-up">Pick up</button>
+          <button
+            className={`deliver-now ${
+              toggleswitch === "deliver" ? "active" : ""
+            }`}
+            onClick={() => setToggleSwitch("deliver")}
+          >
+            Deliver now
+          </button>
+          <button
+            className={`pick-up ${toggleswitch === "pickup" ? "active" : ""}`}
+            onClick={() => setToggleSwitch("pickup")}
+          >
+            Pick up
+          </button>
         </div>
       </div>
 
