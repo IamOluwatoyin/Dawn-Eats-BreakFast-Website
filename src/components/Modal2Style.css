@@ -203,3 +203,48 @@
   background: #ccc;
   cursor: not-allowed;
 }
+
+
+
+
+@media (max-width: 1024px) {
+  .checkout_modal_container {
+    width: 350px;
+  }
+}
+
+
+@media (max-width: 600px) {
+  .checkout_modal_container {
+    width: 80%;
+    border-radius: 8px 0 0 8px;
+  }
+}
+
+
+@media (max-width: 320px) {
+  .checkout_modal_container {
+    width: 100%;
+    height: 100vh;
+    max-height: 100vh;
+    border-radius: 0;
+    padding: 15px;
+  }
+
+  .checkout_modal_header h4 {
+    font-size: 14px;
+  }
+
+  .checkout_summary_item {
+    font-size: 11px;
+  }
+
+  .checkout_proceed_btn,
+  .checkout_cancel_btn {
+    font-size: 11px;
+    padding: 8px 15px;
+  }
+}
+
+
+
