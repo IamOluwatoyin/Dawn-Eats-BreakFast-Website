@@ -31,7 +31,7 @@ const LandingPage = () => {
 
     <div className="general-wrapper">
       <div className="LandingPage-Wrapper">
-        <section className="LandingPage-container">
+        <main className="LandingPage-container">
           <div>
             <img src="/Images/DawnEatsLogo.jpg" alt="logo" />
           </div>
@@ -76,7 +76,7 @@ const LandingPage = () => {
               }}
             />
           )}
-        </section>
+        </main>
 
         <article className="Img-Content-section" style={{ position: "relative" }}>
           <div className="Text-content">
@@ -257,13 +257,14 @@ const LandingPage = () => {
           <h1>About Us</h1>
           <p>
             At DawnEats, we believe that every great day starts with a great
-            breakfast. Our mission is simple: to make mornings easier by
-            delivering fresh, healthy, and delicious meals right to your
-            doorstep, fast and on time. We know how busy mornings can be, so we
-            designed DawnEats to take the stress out of breakfast. With just a
-            few taps, you can explore a variety of carefully curated options —
+            breakfast. Our mission is<br/> simple: to make mornings easier by
+            delivering fresh, healthy, and delicious meals right to<br/> your
+            doorstep, fast and on time.<br/> We know how busy mornings can be, so we
+            designed DawnEats to take the stress out of <br/> breakfast. With just a
+            few taps, you can explore a variety of carefully curated options —<br/>
             from protein-packed plates to energizing smoothies all prepared with
-            quality ingredients to fuel your day. What makes us different?
+            quality ingredients to fuel your day.<br/> What makes us different?
+            </p>
             <ul>
               <li>
                 Speed: Your breakfast arrives before the morning rush takes
@@ -271,15 +272,16 @@ const LandingPage = () => {
               </li>
               <li>
                 Freshness: Every order is made with care, ensuring your meal is
-                always hot, fresh, and satisfying.
+                always hot, fresh, and,<br/> satisfying.
               </li>
               <li>
                 Convenience: Simple ordering, seamless delivery, and meals
-                designed to fit into your morning routine.
+                designed to fit into your <br/>morning routine.
               </li>
             </ul>
+            <p>
             At DawnEats, we’re more than a food app, we’re your morning partner,
-            here to help you start the day right, every single time.
+            here to help you<br/> start the day right, every single time.
           </p>
         </div>
       </section>

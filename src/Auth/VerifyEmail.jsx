@@ -142,9 +142,9 @@ const VerifyEmail = ({ onclose}) => {
           <p 
             style={{ color: "orange", textDecoration: "none", cursor: "pointer" }}
             onClick={() => setopensignUpModal(true)}
-            onSwitchToSignup={() => {
-                setopensignInModal(false);
-                }}
+            // onSwitchToSignup={() => {
+            //     setopensignInModal(false);
+            //     }}
           >
             {" "}
             Sign up
