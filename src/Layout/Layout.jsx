@@ -7,7 +7,7 @@ const Layout = () => {
 
   return (
     <>
-      <Header cartCount={cartItems.length} />
+      <Header cartItems={cartItems} setCartItems={setCartItems} />
       <Outlet context={{ cartItems, setCartItems }} />
     </>
   );

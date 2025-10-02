@@ -1,24 +1,19 @@
 import React, { useEffect, useState } from "react";
 import "./LandingPage.css";
 import LandingPageCard from "../Components/LandingPageCard";
+import Footer from "../Components/Footer";
+import Signup from "../Auth/Signup";
+import Signin from "../Auth/Signin";
+import { Content } from "../utils";
 
 const LandingPage = () => {
-  const Content = [
+  const pic=[
     {
-      h1: "Your morning, your \nway ",
-      span: "Choose from local favourites or \nhealthy picks, delivered fresh to your \ndoor",
-    },
+      id: 1,
+      image:"/Images/Vector.jpg"
+    }
+  ]
 
-    {
-      h1: "Start your day right",
-      span: "Fresh healthy breakfasts \ndelivered on time every \nmorning",
-    },
-
-    {
-      h1: "No more skipped \nbreakfasts",
-      span: "Order in seconds, enjoy in \nminutes. simple fast and reliable",
-    },
-  ];
   const [textIndex, setTextIndex] = useState(0);
 
   useEffect(() => {
@@ -28,28 +23,12 @@ const LandingPage = () => {
     return () => clearInterval(timer);
   }, []);
 
-  const [carouselImg, setCarouselImg] = useState(0);
-  const [direction, setDirection] = useState(1); //1 = right -1=left
+  const [opensignUpModal, setopensignUpModal] = useState(false);
+  const [opensignInModal, setopensignInModal] = useState(false);
 
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCarouselImg((prev) => {
-        let next = prev + direction * 100; // move by100px adjust
-        if (next > (LandingPageCard.length - 3) * 100) {
-          setDirection(-1);
-          return prev - 100;
-        }
-        if (next < 0) {
-          setDirection(1);
-          return prev + 100;
-        }
-        return next;
-      });
-    }, 2000);
-    return () => clearInterval(timer);
-  }, [direction,LandingPageCard.length ]);
 
   return (
+
     <div className="general-wrapper">
       <div className="LandingPage-Wrapper">
         <section className="LandingPage-container">
@@ -58,12 +37,48 @@ const LandingPage = () => {
           </div>
 
           <div className="button-div">
-            <button className="SignUp-btn">Sign Up</button>
-            <button className="login-btn">Sign In</button>
+  
+            <button
+              className="SignUp-btn"
+              onClick={() => {
+                setopensignUpModal(true);
+                setopensignInModal(false);
+              }}
+            >
+              Sign Up
+            </button>
+            <button
+              className="login-btn"
+              onClick={() => {
+                setopensignInModal(true);
+                setopensignUpModal(false);
+              }}
+            >
+              Sign In
+            </button>
+
           </div>
+          {opensignUpModal && (
+            <Signup 
+              onclose={() => setopensignUpModal(false)} 
+              onSwitchToSignin={() => {
+                setopensignUpModal(false);
+                setopensignInModal(true);
+              }}
+            />
+          )}
+          {opensignInModal && (
+            <Signin 
+              onclose={() => setopensignInModal(false)}
+              onSwitchToSignup={() => {
+                setopensignInModal(false);
+                setopensignUpModal(true);
+              }}
+            />
+          )}
         </section>
 
-        <article className="Img-Content-section">
+        <article className="Img-Content-section" style={{ position: "relative" }}>
           <div className="Text-content">
             {Content.map((item, i) => (
               <div
@@ -94,6 +109,48 @@ const LandingPage = () => {
             <img src="./Images/Chef.jpg" alt="chef" />
           </div>
         </article>
+        <div
+        className="dots-container top"
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          gap: "15px",
+          position: "absolute",
+          right: "40px",
+          top: "40px",
+        }}
+      >
+        {[...Array(3)].map((_, i) => (
+          <img
+            key={i}
+            src="/Images/dot.png"
+            alt="dot"
+            style={{ width: "12px", height: "12px" }}
+          />
+        ))}
+      </div>
+
+      {/* Decorative dots (Bottom right) */}
+      <div
+        className="dots-container bottom"
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          gap: "15px",
+          position: "absolute",
+          right: "40px",
+          bottom: "40px",
+        }}
+      >
+        {[...Array(3)].map((_, i) => (
+          <img
+            key={i}
+            src="/Images/Vector.jpg"
+            alt="dot"
+            style={{ width: "12px", height: "12px" }}
+          />
+        ))}
+      </div>
       </div>
       <section className="Restaurant-section">
         <h1>Top Restaurant in DawnEats</h1>
@@ -124,16 +181,11 @@ const LandingPage = () => {
           </div>
         </article>
       </section>
+
       <section className="BreakFast-choice-section">
         <h1>Any Breakfast of Your Choice</h1>
         <div className="carouselWrapper">
-          <div
-            className="carouselContainer"
-            style={{ transform: `translateX(-${carouselImg}px)`,  transition: "transform 0.5s ease-in-out",}}
-           
-          >
-            <LandingPageCard />
-          </div>
+          <LandingPageCard />
         </div>
       </section>
       <section className="dispacth-container">
@@ -171,8 +223,24 @@ const LandingPage = () => {
             Your breakfast is on the way before you know it.
           </p>
           <div className="logistics-btn-holder">
-            <button className="logistics-btn1">Sign up</button>
-            <button className="logistics-btn2">Sign in</button>
+            <button 
+              className="logistics-btn1"
+              onClick={() => {
+                setopensignUpModal(true);
+                setopensignInModal(false);
+              }}
+            >
+              Sign up
+            </button>
+            <button 
+              className="logistics-btn2"
+              onClick={() => {
+                setopensignInModal(true);
+                setopensignUpModal(false);
+              }}
+            >
+              Sign in
+            </button>
           </div>
         </div>
 
@@ -180,6 +248,43 @@ const LandingPage = () => {
           <img src="/Images/logistics.jpg" />
         </div>
       </section>
+
+      <section className="About-us-container">
+        <div className="About-us-img-holder">
+          <img src="/Images/About.jpg" />
+        </div>
+        <div className="About-us-content">
+          <h1>About Us</h1>
+          <p>
+            At DawnEats, we believe that every great day starts with a great
+            breakfast. Our mission is simple: to make mornings easier by
+            delivering fresh, healthy, and delicious meals right to your
+            doorstep, fast and on time. We know how busy mornings can be, so we
+            designed DawnEats to take the stress out of breakfast. With just a
+            few taps, you can explore a variety of carefully curated options —
+            from protein-packed plates to energizing smoothies all prepared with
+            quality ingredients to fuel your day. What makes us different?
+            <ul>
+              <li>
+                Speed: Your breakfast arrives before the morning rush takes
+                over.
+              </li>
+              <li>
+                Freshness: Every order is made with care, ensuring your meal is
+                always hot, fresh, and satisfying.
+              </li>
+              <li>
+                Convenience: Simple ordering, seamless delivery, and meals
+                designed to fit into your morning routine.
+              </li>
+            </ul>
+            At DawnEats, we’re more than a food app, we’re your morning partner,
+            here to help you start the day right, every single time.
+          </p>
+        </div>
+      </section>
+
+      <Footer />
     </div>
   );
 };

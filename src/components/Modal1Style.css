@@ -1,0 +1,220 @@
+.emeka_cart_modal_overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.35);
+  display: flex;
+  justify-content: flex-end;
+  z-index: 999;
+}
+.emeka_cart_modal_container {
+  width: 380px;
+  height: 100vh;
+  background: #fff;
+  margin-right: 5px;            
+  border-radius: 12px 0 0 12px; 
+  display: flex;
+  flex-direction: column;
+  padding: 14px;
+  box-shadow: -2px 0 10px rgba(0,0,0,0.08);
+}
+
+.emeka_cart_modal_header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+.emeka_cart_modal_header img {
+  width: 58px;
+  height: auto;
+}
+.emeka_modal_close_btn {
+  background-color: white;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #ff9800;
+  font-size: 22px;
+  cursor: pointer;
+  color: #ff9800;
+  padding: 0;
+  margin: 0 5px;
+}
+
+.emeka_cart_modal_toprow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 2px 10px;
+  color: #575757;
+}
+.emeka_orders_title {
+  font-size: 16px;
+  margin: 0;
+  font-weight: 600;
+}
+.emeka_items_label {
+  font-size: 12px;
+}
+
+.emeka_cart_modal_content {
+  flex: 1;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+.emeka_empty_text {
+  text-align: center;
+  color: #9a9a9a;
+  font-size: 14px;
+  margin-top: 20px;
+}
+
+.emeka_cart_item {
+  display: grid;
+  grid-template-columns: 60px 1fr auto auto;
+  gap: 10px;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+.emeka_cart_item_image {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+.emeka_cart_item_details {
+  overflow: hidden;
+}
+.emeka_cart_item_title {
+  margin: 0 0 4px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #222;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.emeka_cart_item_price {
+  margin: 0;
+  font-size: 13px;
+  color: #444;
+}
+
+.emeka_delete_icon_btn {
+  background: transparent;
+  border: none;
+  font-size: 18px;
+  color: #ff9800;
+  cursor: pointer;
+  padding: 4px;
+  line-height: 1;
+}
+.emeka_delete_icon_btn:hover {
+  color: #ff7f00;
+}
+
+.emeka_cart_item_quantity {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.emeka_qty_btn {
+  width: 18px;
+  height: 26px;
+  /* border: 1px solid #ddd; */
+  border: none;
+  background-color: #fff;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 22px;
+}
+.emeka_qty_value {
+  min-width: 18px;
+  text-align: center;
+  font-size: 12px;
+}
+
+.emeka_cart_modal_footer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-top: 12px;
+  border-top: 1px solid #f0f0f0;
+}
+.emeka_proceed_btn {
+  background: #ff9800;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 12px;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom: 10px;
+}
+.emeka_cancel_btn {
+  background: white;
+  color: black;
+  padding: 10px 20px;
+  border: 2px solid #ff9800;
+  border-radius: 8px;
+  font-size: 12px;
+  cursor: pointer;
+  width: 100%;
+}
+
+
+@media (max-width: 1024px) {
+  .emeka_cart_modal_container {
+    width: 400px;
+  }
+}
+
+@media (max-width: 600px) {
+  .emeka_cart_modal_container {
+    width: 60%;
+    margin-right: 0;
+    border-radius: 0;
+  }
+}
+
+@media (max-width: 320px) {
+  .emeka_cart_modal_container {
+    width: 100%;
+    margin-right: 0;
+    border-radius: 0;
+    padding: 10px;
+  }
+
+  .emeka_cart_modal_header img {
+    width: 45px;
+  }
+
+  .emeka_cart_modal_header {
+    padding-bottom: 6px;
+  }
+
+  .emeka_cart_item {
+    grid-template-columns: 50px 1fr auto;
+    gap: 8px;
+  }
+
+  .emeka_cart_item_image {
+    width: 50px;
+    height: 50px;
+  }
+
+  .emeka_cart_modal_footer {
+    gap: 8px;
+  }
+
+  .emeka_proceed_btn,
+  .emeka_cancel_btn {
+    font-size: 11px;
+    padding: 8px 16px;
+  }
+}
