@@ -64,3 +64,39 @@ export const LandingPageData = [
        text: "Pastries"
     },
   ];
+
+  export const exploreCards = [
+    {
+      id:1,
+      image:"/Images/Proteins.jpg",
+      name:"Proteins"
+    },
+
+      {
+      id:2,
+      image:"/Images/Smoothies.jpg",
+      name:"Smoothies"
+    },
+
+      {
+      id:3,
+      image:"/Images/dashboard3.jpg",
+      name:"Native"
+    },
+
+      {
+      id:4,
+      image:"/Images/dashboard4.jpg",
+      name:"Coffee & Tea"
+    },
+      {
+      id:5,
+      image:"/Images/Oatmeal-blueberries.jpg",
+      name:"Oatmeal"
+    },
+      {
+      id:6,
+      // image:"/Images/Pastries.jpg",
+      name:"Pastries"
+    }
+  ]

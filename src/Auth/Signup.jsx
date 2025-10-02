@@ -3,6 +3,8 @@ import React, { useState } from "react";
 import "./Signup.css";
 import { MdOutlineCancel, MdOutlineMail } from "react-icons/md";
 import VerifyEmail from "./VerifyEmail";
+import { data, Navigate, useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const Signup = ({ onclose, onSwitchToSignin }) => {
   const [showModal, setModal] = useState(false);
@@ -12,14 +14,58 @@ const Signup = ({ onclose, onSwitchToSignin }) => {
     console.log("clicked");
     setModal(!showModal);
   };
+  const navigate = useNavigate()
+  const [user, setUser] =useState({
+    firstName: "",
+    lastName:"",
+    email:"",
+    phone:""
+  })
+  const [loading, setloading] = useState(false);
+  const [error, setError] = useState({});
+  const validateForm = (e) => {
+    e.preventDefault();
 
+    let newErr = {};
+    if (!user.firstName.trim()) {
+      newErr.firstName = " first name is required";
+    }
+    if (!user.lastName.trim()) {
+      newErr.lastName = " last name is required";
+    }
+    if (!user.email) {
+      newErr.email = "Email is required";
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(user.email)) {
+      newErr.email = "Invalid format";
+    }
+
+    
+
+    if (!/^\d+$/.test(user.phone)) {
+      newErr.phone = "Phone number must contain only digits";
+    } else if (user.phone.length !== 11) {
+      newErr.phone = "11 digit phone number is required";
+    }
+
+      setError(newErr);
+
+
+    if (Object.keys(newErr).length === 0) {
+      // ✅ Send everything except password via URL
+      // ✅ Send password via state (not visible in URL)
+      setModal(true);gi
+    }
+  };
+
+ 
   return (
     <>
+
       {showModal ? (
         <VerifyEmail onclose={onclose} />
       ) : (
         <div className="form-wrapper">
-          <form className="form-holder">
+          <form className="form-holder"  onSubmit={validateForm}>
             <div onClick={() => onclose()} className="modal-cancel">
               <MdOutlineCancel />
             </div>
@@ -63,8 +109,14 @@ const Signup = ({ onclose, onSwitchToSignin }) => {
                     borderRadius: "8px",
                     padding: "10px",
                   }}
+                  type="text"
+                  onChange={(e) =>
+            setUser({ ...user, firstName: e.target.value })
+          }
                 />
               </div>
+               {error.firstName && <p style={{ color: "red" }}>{error.firstName}</p>}
+
 
               <div
                 style={{
@@ -83,8 +135,14 @@ const Signup = ({ onclose, onSwitchToSignin }) => {
                     borderRadius: "8px",
                     padding: "10px",
                   }}
+                  type="text"
+                  onChange={(e) =>
+            setUser({ ...user, lastName: e.target.value })
+          }
                 />
               </div>
+               {error.lastName && <p style={{ color: "red" }}>{error.lastName}</p>}
+
             </div>
 
             <div
@@ -106,6 +164,7 @@ const Signup = ({ onclose, onSwitchToSignin }) => {
                   borderRadius: "8px",
                   padding: " 0 10px",
                 }}
+                
               >
                 <MdOutlineMail style={{ fontSize: "18px" }} />
                 <input
@@ -115,8 +174,14 @@ const Signup = ({ onclose, onSwitchToSignin }) => {
                     outline: "none",
                     border: "none",
                   }}
+                  type="email"
+                  onChange={(e) =>
+            setUser({ ...user, email: e.target.value })
+          }
                 />
               </div>
+               {error.email && <p style={{ color: "red" }}>{error.email}</p>}
+
             </div>
        
             <div
@@ -162,8 +227,13 @@ const Signup = ({ onclose, onSwitchToSignin }) => {
                     border: "none",
                     padding: "0 10px",
                   }}
+                  onChange={(e) =>
+            setUser({ ...user, phone: e.target.value })
+          }
                 />
               </div>
+               {error.phone && <p style={{ color: "red" }}>{error.phone}</p>}
+
             </div>
 
             <div
@@ -183,9 +253,10 @@ const Signup = ({ onclose, onSwitchToSignin }) => {
                   padding: "10px",
                   cursor: "pointer",
                 }}
-                onClick={handleOpen}
+                type="submit"
+                // onClick={handleOpen}
               >
-                Sign Up
+                {loading ? <span>Registering....</span> : <span>Sign Up</span>}
               </button>
             </div>
 
