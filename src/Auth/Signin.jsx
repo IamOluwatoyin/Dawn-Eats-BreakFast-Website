@@ -2,9 +2,22 @@ import React from "react";
 import { MdOutlineCancel, MdOutlineMail } from "react-icons/md";
 import { NavLink } from "react-router-dom";
 import "./Signin.css";
+import VerifyEmail from "./VerifyEmail";
+import { useState } from "react";
 
 const Signin = ({ onclose, onSwitchToSignup }) => {
+     const [showModal, setModal] = useState(false);
+     
+       const handleOpen = (e) => {
+         e.preventDefault();
+        
+         setModal(!showModal);
+       };
   return (
+    <>
+    {showModal ? (
+        <VerifyEmail onclose={onclose} />
+      ) : (
     <div className="Signin-wrapper">
       <form className="signin-holder">
         <div className="img-logo">
@@ -109,7 +122,9 @@ const Signin = ({ onclose, onSwitchToSignup }) => {
               height: "40px",
               borderRadius: "8px",
               padding: "10px",
-            }}
+              cursor:"pointer"
+            }} 
+            onClick={handleOpen}
           >
             Sign In
           </button>
@@ -135,8 +150,13 @@ const Signin = ({ onclose, onSwitchToSignup }) => {
           </p>
         </div>
       </form>
+      
     </div>
+      )}
+      </>
+    
   );
+  
 };
 
 export default Signin;

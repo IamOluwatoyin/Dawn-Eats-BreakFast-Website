@@ -7,6 +7,12 @@ import Signin from "../Auth/Signin";
 import { Content } from "../utils";
 
 const LandingPage = () => {
+  const pic=[
+    {
+      id: 1,
+      image:"/Images/Vector.jpg"
+    }
+  ]
 
   const [textIndex, setTextIndex] = useState(0);
 
@@ -72,7 +78,7 @@ const LandingPage = () => {
           )}
         </section>
 
-        <article className="Img-Content-section">
+        <article className="Img-Content-section" style={{ position: "relative" }}>
           <div className="Text-content">
             {Content.map((item, i) => (
               <div
@@ -103,6 +109,48 @@ const LandingPage = () => {
             <img src="./Images/Chef.jpg" alt="chef" />
           </div>
         </article>
+        <div
+        className="dots-container top"
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          gap: "15px",
+          position: "absolute",
+          right: "40px",
+          top: "40px",
+        }}
+      >
+        {[...Array(3)].map((_, i) => (
+          <img
+            key={i}
+            src="/Images/dot.png"
+            alt="dot"
+            style={{ width: "12px", height: "12px" }}
+          />
+        ))}
+      </div>
+
+      {/* Decorative dots (Bottom right) */}
+      <div
+        className="dots-container bottom"
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          gap: "15px",
+          position: "absolute",
+          right: "40px",
+          bottom: "40px",
+        }}
+      >
+        {[...Array(3)].map((_, i) => (
+          <img
+            key={i}
+            src="/Images/Vector.jpg"
+            alt="dot"
+            style={{ width: "12px", height: "12px" }}
+          />
+        ))}
+      </div>
       </div>
       <section className="Restaurant-section">
         <h1>Top Restaurant in DawnEats</h1>
