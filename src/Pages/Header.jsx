@@ -4,11 +4,12 @@ import { RiArrowDropDownLine } from "react-icons/ri";
 import { FaShoppingCart, FaUser, FaSearch } from "react-icons/fa";
 import emekaheaderlogo from "../assets/IMG_4853.JPG";
 import CartModal1 from "../components/Modal1";
+import Modal4 from "../Components/Modal4";
 import "./HeaderStyle.css";
 
 const Header = ({ cartItems = [], setCartItems }) => {
-  
   const [showModal, setShowModal] = useState(false);
+  const [profileOpen, setProfileOpen] = useState(false);
 
   return (
     <>
@@ -39,38 +40,46 @@ const Header = ({ cartItems = [], setCartItems }) => {
             <span className="cart_count">{cartItems?.length || 0}</span>
           </div>
 
-          <FaUser className="emeka_icon" />
+          <FaUser className="emeka_icon" onClick={() => setProfileOpen(true)} />
+          {profileOpen ? (
+            <div
+              className="profile-dropdown"
+              onMouseLeave={() => setProfileOpen(false)}
+            >
+              <Modal4 />
+            </div>
+          ) : null}
         </div>
       </header>
 
       {showModal && (
-  <CartModal1
-    cartItems={cartItems}
-    setCartItems={setCartItems}
-    onClose={() => setShowModal(false)}
-    onRemoveItem={(id) =>
-      setCartItems((prev) => prev.filter((item) => item.id !== id))
-    }
-    onIncreaseQty={(id) =>
-      setCartItems((prev) =>
-        prev.map((item) =>
-          item.id === id
-            ? { ...item, quantity: (item.quantity || 1) + 1 }
-            : item
-        )
-      )
-    }
-    onDecreaseQty={(id) =>
-      setCartItems((prev) =>
-        prev.map((item) =>
-          item.id === id
-            ? { ...item, quantity: Math.max(1, (item.quantity || 1) - 1) }
-            : item
-        )
-      )
-    }
-  />
-)}
+        <CartModal1
+          cartItems={cartItems}
+          setCartItems={setCartItems}
+          onClose={() => setShowModal(false)}
+          onRemoveItem={(id) =>
+            setCartItems((prev) => prev.filter((item) => item.id !== id))
+          }
+          onIncreaseQty={(id) =>
+            setCartItems((prev) =>
+              prev.map((item) =>
+                item.id === id
+                  ? { ...item, quantity: (item.quantity || 1) + 1 }
+                  : item
+              )
+            )
+          }
+          onDecreaseQty={(id) =>
+            setCartItems((prev) =>
+              prev.map((item) =>
+                item.id === id
+                  ? { ...item, quantity: Math.max(1, (item.quantity || 1) - 1) }
+                  : item
+              )
+            )
+          }
+        />
+      )}
     </>
   );
 };

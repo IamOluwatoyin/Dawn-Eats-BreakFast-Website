@@ -1,6 +1,7 @@
 .header {
   background: white;
   width: 100%;
+  font-family: "Inter", sans-serif;
   position: relative;
   top: 10px;
 
@@ -43,6 +44,7 @@
 .location-text {
   font-size: 14px;
   color: #666;
+  font-family: "Inter", sans-serif;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -105,8 +107,9 @@
   border: 0.5px solid black;
   margin-right: 100px;
   position: absolute;
-  top: 40px;
-  /* right: -90px; */
+  top: 70px;
+  right: -90px;
+  cursor: pointer;
   bottom: 0px;
   background-color: white;
 }
@@ -129,6 +132,7 @@
   display: flex;
   margin-top: 40px;
   align-items: center;
+  font-family: "Inter", sans-serif;
   color: #666;
   text-decoration: none;
   font-size: 14px;
@@ -144,17 +148,19 @@
   color: #ff6b35;
 }
 .hero-section {
-  position: relative;
-  /* margin-top: 100px; */
-  height: 300px;
-  background: url("./public/images/Scrambledeggsandtoast.jpg");
-  background-size: cover;
-  object-fit: cover;
-  background-repeat: no-repeat;
+  display: flex;
+  width: 100%;
+  height: 62vh;
+  align-self: center;
+  justify-content: center;
+  /* padding: 20px; */
+  align-items: center;
+  /* flex-shrink: 0; */
   background-position: center;
-  border-radius: 15px;
-  margin: 0 20px;
-  overflow: hidden;
+  object-fit: cover;
+  background-size: cover;
+  border-radius: 16px;
+  background: url("./public/images/pancakes.jpg") 50% / cover no-repeat;
 }
 
 .delivery-time {
@@ -162,6 +168,7 @@
   bottom: 20px;
   left: 20px;
   background: white;
+  font-family: "Inter", sans-serif;
   color: black;
   padding: 8px 12px;
   /* border-radius: 15px; */
@@ -178,6 +185,7 @@
 .restaurant-info {
   padding: 20px;
   background: white;
+  font-family: "Inter", sans-serif;
   margin: 0 20px;
   border-radius: 0 0 15px 15px;
   display: flex;
@@ -188,6 +196,7 @@
 .restaurant-name {
   font-size: 24px;
   font-weight: bold;
+  font-family: "Inter", sans-serif;
   display: flex;
   align-items: center;
 }
@@ -197,6 +206,7 @@
   /* background: #f0f0f0; */
   padding: 4px 8px;
   border-radius: 12px;
+  font-family: "Inter", sans-serif;
   font-size: 12px;
 }
 
@@ -222,11 +232,13 @@
   height: 40px;
   color: white;
   border-radius: 5px;
+  font-family: "Inter", sans-serif;
 }
 
 .pick-up {
   background: white;
   height: 40px;
+  font-family: "Inter", sans-serif;
   border: none;
   width: 50%;
   color: #ff6b35;
@@ -265,78 +277,98 @@
   margin-left: 30px;
   color: #666;
   margin-bottom: 2px;
+  font-family: "Inter", sans-serif;
 }
 
 .hours-info p {
   font-size: 14px;
   margin-left: 30px;
+  font-family: "Inter", sans-serif;
   color: #999;
 }
 
 .min-order {
   font-size: 16px;
   color: #666;
+  font-family: "Inter", sans-serif;
 }
-
 .menu-grid {
-  padding: 20px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
   gap: 20px;
-}
+  font-family: "Inter", sans-serif;
 
-.menu-item {
-  background: white;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  position: relative;
-}
-
-.menu-item-image {
   width: 100%;
-  height: 160px;
-  background: #f0f0f0;
+  margin: 0;
+  padding: 50px;
+}
+.menu-card {
+  background: #fff;
+  border: 1px solid grey;
+
+  border-radius: 8px 8px 8px 8px;
+  border-bottom: none;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transform: translateY(-3px);
+}
+.priceandaddtocart {
   display: flex;
   align-items: center;
-  justify-content: center;
-  color: #999;
-  font-size: 14px;
-}
-
-.menu-item-info {
-  padding: 15px;
-}
-
-.menu-item-name {
-  font-size: 14px;
-  font-weight: 500;
-  margin-bottom: 8px;
-  line-height: 1.3;
-}
-
-.menu-item-price {
-  display: flex;
   justify-content: space-between;
-  align-items: center;
-  margin-top: 10px;
 }
 
-.price {
-  font-size: 16px;
-  font-weight: bold;
+.menu-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-bottom: 0.5px solid grey;
+}
+
+.menu-info {
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* flex-grow: 1; */
+  margin-top: 70px;
+  font-family: "Inter", sans-serif;
+}
+
+.menu-title {
+  font-size: 15px;
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.menu-price {
+  font-size: 14px;
   color: #333;
+  font-family: "Inter", sans-serif;
+  margin-bottom: 10px;
 }
 
-.add-button {
-  background: #ff6b35;
-  color: white;
+.add-btn {
+  background: #ff6600;
+  font-family: "Inter", sans-serif;
   border: none;
-  padding: 6px 12px;
-  border-radius: 15px;
-  font-size: 12px;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 14px;
   cursor: pointer;
-  font-weight: 500;
+  align-self: flex-start;
+}
+
+.add-btn:hover {
+  background: #e65c00;
 }
 
 .footer {
@@ -355,6 +387,7 @@
 
 .footer-section h3 {
   font-size: 16px;
+  font-family: "Inter", sans-serif;
   margin-bottom: 15px;
   color: #333;
 }
@@ -368,6 +401,7 @@
   color: #666;
   text-decoration: none;
   font-size: 14px;
+  font-family: "Inter", sans-serif;
   cursor: pointer;
 }
 
@@ -401,6 +435,7 @@
 .copyright {
   color: #666;
   font-size: 12px;
+  font-family: "Inter", sans-serif;
 }
 
 .social-icons {

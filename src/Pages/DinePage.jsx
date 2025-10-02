@@ -16,13 +16,16 @@ import {
 import { MdShoppingCart } from "react-icons/md";
 import { SiGmail } from "react-icons/si";
 import Modal4 from "../Components/Modal4";
+import Header from "./Header";
+import Footer from "../Components/Footer";
+import { menuItems } from "../utils";
 
 const DinePage = () => {
   const [toggleswitch, setToggleSwitch] = useState("deliver");
   const [profileOpen, setProfileOpen] = useState(false);
   return (
     <>
-      <header className="header">
+      {/* <header className="header">
         <div className="header-container">
           <img src="./public/Logo.png" alt="logo" className="logo" />
           <div className="location">
@@ -57,7 +60,7 @@ const DinePage = () => {
             </div>
           </div>
         </div>
-      </header>
+      </header> */}
 
       <a href="#" className="back-button">
         <span className="back-arrow">
@@ -111,63 +114,22 @@ const DinePage = () => {
         <div className="min-order">Min order: ₦1,000</div>
       </div>
 
-      <div className="menu-grid" id="menuGrid"></div>
+      <div className="menu-grid">
+        {menuItems.map((item, index) => (
+          <div key={index} className="menu-card">
+            <img src={item.image} alt={item.name} className="menu-image" />
+            <div className="menu-info">
+              <p className="menu-title">{item.name}</p>
+              <div className="priceandaddtocart">
+                <p className="menu-price">₦{item.price.toLocaleString()}</p>
+                <button className="add-btn">Add to cart</button>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
 
-      <footer className="footer">
-        <img src="./public/Logo.png" alt="" className="footer-logo" />
-        <div className="footer-content">
-          <div className="footer-section">
-            <h3>Let's do it together</h3>
-            <ul>
-              <li>Careers</li>
-              <li>OwenEats for partners</li>
-              <li>Couriers</li>
-              <li>OwenEats partners</li>
-            </ul>
-          </div>
-          <div className="footer-section">
-            <h3>Locations</h3>
-            <ul>
-              <li>Abeokuta</li>
-              <li>Festac</li>
-              <li>Amuwo Odofin</li>
-              <li>Lekki</li>
-            </ul>
-          </div>
-          <div className="footer-section">
-            <h3>Legal</h3>
-            <ul>
-              <li>Privacy policy</li>
-              <li>Terms of use</li>
-            </ul>
-          </div>
-          <div className="footer-section">
-            <h3>Contact Detail</h3>
-            <ul>
-              <li>+234 9062771345</li>
-              <li>Owentech@gmail.com</li>
-              <li>Address - 72 Wilmer Crescent</li>
-            </ul>
-          </div>
-        </div>
-        <div className="footer-bottom">
-          <div className="copyright">© 2025 OwenEats</div>
-          <div className="social-icons">
-            <div className="social-icon facebook">
-              <FaFacebook />
-            </div>
-            <div className="social-icon instagram">
-              <FaInstagramSquare />
-            </div>
-            <div className="social-icon twitter">
-              <FaSquareTwitter />
-            </div>
-            <div className="social-icon gmail">
-              <SiGmail />
-            </div>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </>
   );
 };
