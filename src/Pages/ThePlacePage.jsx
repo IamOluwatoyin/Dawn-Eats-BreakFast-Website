@@ -8,7 +8,7 @@ import ThePlaceProdApi from "./ThePlaceProdApi";
 const ThePlacePage = () => {
   const [active, setActive] = useState("deliver");
   const { cartItems, setCartItems } = useOutletContext();
-
+ 
   return (
     <section className="the_place_hero">
       <div className="place_back_link">

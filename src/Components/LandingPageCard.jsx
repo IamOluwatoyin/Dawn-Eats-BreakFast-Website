@@ -8,7 +8,7 @@ const LandingPageCard = () => {
   const imageWidth = 450;
   const gap = 15;
   const slideWidth = imageWidth + gap;
-  const visibleImages = 3; 
+  const visibleImages = 4; 
 
   useEffect(() => {
     const timer = setInterval(() => {
