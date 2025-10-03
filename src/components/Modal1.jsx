@@ -29,7 +29,7 @@ const CartModal = ({
     setCartItems([]); 
     setShowCheckoutModal(false);
     onClose(); 
-    alert("Order confirmed!");
+    // alert("Order confirmed!");
   };
 
   const handleBackToCart = () => {

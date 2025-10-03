@@ -148,3 +148,75 @@
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
+
+
+
+
+.order_conf_loading_circle,
+.order_conf_loading_spinner {
+  width: 100px;
+  height: 100px;
+}
+
+.order_conf_completion_circle {
+  width: 80px;
+  height: 80px;
+}
+
+.order_conf_completion_icon {
+  font-size: 70px;
+}
+
+
+@media screen and (max-width: 1024px) {
+  .order_conf_loading_circle,
+  .order_conf_loading_spinner {
+    width: 90px;
+    height: 90px;
+  }
+
+  .order_conf_completion_circle {
+    width: 70px;
+    height: 70px;
+  }
+
+  .order_conf_completion_icon {
+    font-size: 60px;
+  }
+}
+
+
+@media screen and (max-width: 600px) {
+  .order_conf_loading_circle,
+  .order_conf_loading_spinner {
+    width: 80px;
+    height: 80px;
+  }
+
+  .order_conf_completion_circle {
+    width: 60px;
+    height: 60px;
+  }
+
+  .order_conf_completion_icon {
+    font-size: 50px;
+  }
+}
+
+
+@media screen and (max-width: 320px) {
+  .order_conf_loading_circle,
+  .order_conf_loading_spinner {
+    width: 70px;
+    height: 70px;
+  }
+
+  .order_conf_completion_circle {
+    width: 50px;
+    height: 50px;
+  }
+
+  .order_conf_completion_icon {
+    font-size: 40px;
+  }
+}
