@@ -4,7 +4,7 @@ import "./Signup.css";
 import { MdOutlineCancel, MdOutlineMail } from "react-icons/md";
 import VerifyEmail from "./VerifyEmail";
 import { data, Navigate, useNavigate } from "react-router-dom";
-import axios from "axios";
+import axios, { Axios } from "axios";
 
 const Signup = ({ onclose, onSwitchToSignin }) => {
   const [showModal, setModal] = useState(false);
@@ -23,39 +23,67 @@ const Signup = ({ onclose, onSwitchToSignin }) => {
   })
   const [loading, setloading] = useState(false);
   const [error, setError] = useState({});
-  const validateForm = (e) => {
-    e.preventDefault();
 
-    let newErr = {};
-    if (!user.firstName.trim()) {
-      newErr.firstName = " first name is required";
-    }
-    if (!user.lastName.trim()) {
-      newErr.lastName = " last name is required";
-    }
-    if (!user.email) {
-      newErr.email = "Email is required";
-    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(user.email)) {
-      newErr.email = "Invalid format";
-    }
+  const validateForm = async (e) => {
+  e.preventDefault();
 
-    
+  let newErr = {};
 
-    if (!/^\d+$/.test(user.phone)) {
-      newErr.phone = "Phone number must contain only digits";
-    } else if (user.phone.length !== 11) {
-      newErr.phone = "11 digit phone number is required";
-    }
+  if (!user.firstName.trim()) {
+    newErr.firstName = "First name is required";
+  }
+  if (!user.lastName.trim()) {
+    newErr.lastName = "Last name is required";
+  }
+  if (!user.email) {
+    newErr.email = "Email is required";
+  } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(user.email)) {
+    newErr.email = "Invalid format";
+  }
+  if (!/^\d+$/.test(user.phone)) {
+    newErr.phone = "Phone number must contain only digits";
+  } else if (user.phone.length !== 11) {
+    newErr.phone = "11 digit phone number is required";
+  }
 
-      setError(newErr);
+  setError(newErr);
 
+  // Stop if there are validation errors
+  if (Object.keys(newErr).length > 0) return;
 
-    if (Object.keys(newErr).length === 0) {
-      // ✅ Send everything except password via URL
-      // ✅ Send password via state (not visible in URL)
-      setModal(true);gi
-    }
-  };
+  //  Call your API if validation passes
+  setloading(true);
+  try {
+    const res = await axios.post(
+      "https://dawneats-backend.onrender.com/api/v1/auth/signup",
+      user,
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
+
+    console.log("API success:", res.data);
+
+    //  Clear form
+    setUser({
+      firstName: "",
+      lastName: "",
+      email: "",
+      phone: "",
+    });
+
+    //  Show VerifyEmail modal
+    setModal(true);
+
+  } catch (error) {
+    console.error("API error:", error.response?.data || error.message);
+    alert(error.response?.data?.message || "Something went wrong!");
+  } finally {
+    setloading(false);
+  }
+};
 
  
   return (
@@ -256,7 +284,7 @@ const Signup = ({ onclose, onSwitchToSignin }) => {
                 type="submit"
                 // onClick={handleOpen}
               >
-                {loading ? <span>Registering....</span> : <span>Sign Up</span>}
+                {loading ? <span>Signning....</span> : <span>Sign Up</span>}
               </button>
             </div>
 

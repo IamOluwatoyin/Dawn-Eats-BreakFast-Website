@@ -20,6 +20,16 @@ const DashBoard = () => {
          <p style={{color:"white", fontWeight:"400", fontSize:"40px", left:"10%", position:"absolute"}}> Delivered to <br/>anywhere within <br/> your location</p>
         </div>
        </section>
+
+       <section className='section2-holder'>
+        <h1>Restaurants</h1>
+        <div className='image1holder'>
+         <p style={{color:"white", fontWeight:"400", fontSize:"40px",  left:"10%", position:"absolute"}}>Get any <br/> breakfast of<br/> your choice</p>
+        </div>
+        <div className='image1holder2'> 
+         <p style={{color:"white", fontWeight:"400", fontSize:"40px", left:"10%", position:"absolute"}}> Delivered to <br/>anywhere within <br/> your location</p>
+        </div>
+       </section>
       </div>
       
       

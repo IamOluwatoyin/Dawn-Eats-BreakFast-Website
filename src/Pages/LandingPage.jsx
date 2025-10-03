@@ -35,8 +35,46 @@ const LandingPage = () => {
           <div>
             <img src="/Images/DawnEatsLogo.jpg" alt="logo" />
           </div>
+          
+           <div className="button-div">
+  
+            <button
+              className="SignUp-btn"
+              onClick={() => {
+                setopensignUpModal(true);
+                setopensignInModal(false);
+              }}
+            >
+              Sign Up
+            </button>
+            <button
+              className="login-btn"
+              onClick={() => {
+                setopensignInModal(true);
+                setopensignUpModal(false);
+              }}
+            >
+              Sign In
+            </button>
 
-          <div className="button-div">
+          </div>
+         
+        </main>
+
+        <article className="Img-Content-section" style={{ position: "relative" }}>
+        <div className="Text-content">
+  {Content.map((item, i) => (
+    <div
+      key={i}
+      className={`text-block ${i === textIndex ? "active" : "inactive"}`}
+    >
+      <h1>{item.h1}</h1>
+      <span>{item.span}</span>
+    </div>
+  ))}
+</div>
+
+           <div className="button-div2">
   
             <button
               className="SignUp-btn"
@@ -76,81 +114,15 @@ const LandingPage = () => {
               }}
             />
           )}
-        </main>
-
-        <article className="Img-Content-section" style={{ position: "relative" }}>
-          <div className="Text-content">
-            {Content.map((item, i) => (
-              <div
-                key={i}
-                style={{
-                  display: i === textIndex ? "block" : "none",
-                  transition: "opacity 0.5s ease-in-out",
-                }}
-              >
-                <h1
-                  style={{
-                    fontWeight: "bolder",
-                    fontSize: "80px",
-                    paddingBottom: "20px",
-                    whiteSpace: "pre-line",
-                  }}
-                >
-                  {item.h1}
-                </h1>
-                <span style={{ fontSize: "30px", whiteSpace: "pre-line" }}>
-                  {item.span}
-                </span>
-              </div>
-            ))}
-          </div>
 
           <div className="image-container">
             <img src="./Images/Chef.jpg" alt="chef" />
           </div>
         </article>
-        <div
-        className="dots-container top"
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          gap: "15px",
-          position: "absolute",
-          right: "40px",
-          top: "40px",
-        }}
-      >
-        {[...Array(3)].map((_, i) => (
-          <img
-            key={i}
-            src="/Images/dot.png"
-            alt="dot"
-            style={{ width: "12px", height: "12px" }}
-          />
-        ))}
-      </div>
+        
 
-      {/* Decorative dots (Bottom right) */}
-      <div
-        className="dots-container bottom"
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          gap: "15px",
-          position: "absolute",
-          right: "40px",
-          bottom: "40px",
-        }}
-      >
-        {[...Array(3)].map((_, i) => (
-          <img
-            key={i}
-            src="/Images/Vector.jpg"
-            alt="dot"
-            style={{ width: "12px", height: "12px" }}
-          />
-        ))}
-      </div>
+      
+      
       </div>
       <section className="Restaurant-section">
         <h1>Top Restaurant in DawnEats</h1>
