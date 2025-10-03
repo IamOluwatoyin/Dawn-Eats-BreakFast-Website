@@ -11,6 +11,7 @@ import { RiArrowDropDownLine } from "react-icons/ri";
 import {
   FaArrowLeftLong,
   FaLocationDot,
+  FaStar,
   FaSquareTwitter,
 } from "react-icons/fa6";
 import { MdShoppingCart } from "react-icons/md";
@@ -83,7 +84,9 @@ const DinePage = () => {
           <h1 className="restaurant-name">
             The Place - <FaLocationDot className="searchicon" /> Wilmer
             <span className="rating">
-              <span className="star">⭐</span>
+              <span className="star">
+                <FaStar />
+              </span>
               4.20
             </span>
           </h1>
