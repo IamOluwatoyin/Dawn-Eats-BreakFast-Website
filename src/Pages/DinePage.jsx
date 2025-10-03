@@ -24,6 +24,19 @@ import { menuItems } from "../utils";
 const DinePage = () => {
   const [toggleswitch, setToggleSwitch] = useState("deliver");
   const [profileOpen, setProfileOpen] = useState(false);
+  const handleAddToCart = (product) => {
+    setCartItems((prev) => {
+      const exists = prev.find((item) => item.id === product.id);
+      if (exists) {
+        return prev.map((item) =>
+          item.id === product.id
+            ? { ...item, quantity: (item.quantity || 1) + 1 }
+            : item
+        );
+      }
+      return [...prev, { ...product, quantity: 1 }];
+    });
+  };
   return (
     <>
       {/* <header className="header">
@@ -125,7 +138,9 @@ const DinePage = () => {
               <p className="menu-title">{item.name}</p>
               <div className="priceandaddtocart">
                 <p className="menu-price">₦{item.price.toLocaleString()}</p>
-                <button className="add-btn">Add to cart</button>
+                <button className="add-btn" onClick={handleAddToCarts}>
+                  Add to cart
+                </button>
               </div>
             </div>
           </div>
