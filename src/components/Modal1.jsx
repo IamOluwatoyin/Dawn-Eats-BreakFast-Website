@@ -13,7 +13,7 @@ const CartModal = ({
   onIncreaseQty,
   onDecreaseQty,
 }) => {
-  const [showCheckoutModal, setShowCheckoutModal] = useState(true);
+  const [showCheckoutModal, setShowCheckoutModal] = useState(false);
 
   const handleRemove = (id) => onRemoveItem && onRemoveItem(id);
   const inc = (id) => onIncreaseQty && onIncreaseQty(id);
