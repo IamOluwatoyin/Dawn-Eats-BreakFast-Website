@@ -127,6 +127,7 @@ const Signup = ({ onclose, onSwitchToSignin }) => {
                   display: "flex",
                   flexDirection: "column",
                   gap: "8px",
+                  color:"#FF6E00"
                 }}
               >
                 <h5>First Name</h5>
@@ -153,6 +154,7 @@ const Signup = ({ onclose, onSwitchToSignin }) => {
                   display: "flex",
                   flexDirection: "column",
                   gap: "8px",
+                  color:"#FF6E00"
                 }}
               >
                 <h5> Last Name</h5>
@@ -179,6 +181,7 @@ const Signup = ({ onclose, onSwitchToSignin }) => {
                 display: "flex",
                 flexDirection: "column",
                 gap: "8px",
+                color:"#FF6E00"
               }}
             >
               <h5>Email Address</h5>
@@ -219,6 +222,7 @@ const Signup = ({ onclose, onSwitchToSignin }) => {
                 flexDirection: "column",
                 gap: "8px",
                 marginTop: "20px",
+                color:"#FF6E00"
               }}
             >
               <h5>Phone Number</h5>
@@ -280,6 +284,7 @@ const Signup = ({ onclose, onSwitchToSignin }) => {
                   borderRadius: "8px",
                   padding: "10px",
                   cursor: "pointer",
+                  background:"#FF6E00"
                 }}
                 type="submit"
                 // onClick={handleOpen}

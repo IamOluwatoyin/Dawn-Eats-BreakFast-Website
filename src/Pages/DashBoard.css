@@ -40,8 +40,9 @@
   
 }
 
+
 .image1holder {
-  /* background-image: url("./Images/pan.jpg"); */
+ 
   position: relative;
   background-image: linear-gradient(rgba(0,0,0,0.66), rgba(0,0,0,0.664)),
                     url("./Images/pan.jpg");
@@ -53,13 +54,52 @@
                     url("./Images/deliveryBike.jpg");
 }
 
+.Header {
+    font-size: 20px;
+    
+    font-weight: 30px;
+    margin-bottom: 20px;
+    
+}
+ .Header > h1{
+    margin-left: 30px;
+  margin-bottom: 20px;
+}
+.restaurant-image {
+	width: 700px;
+	height: 400px;
+	object-fit: cover;
+	border-radius: 10px;
+	margin-bottom: 10px;
+}
+
+.restaurant-text {
+	font-size: xx-large;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 30px;
+}
+
+.restaurant-row {
+	display: flex;
+	flex-direction: row;
+    justify-content: center;
+    justify-content: space-around;
+	gap: 70px;
+	align-items: flex-start;
+  
+}
+
+.restaurant-image{
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
 @media screen and (max-width: 768px) {
   /* 1. Explore Menu - scroll horizontally, no edge space */
   .card-wrapper {
     overflow-x: auto;
     flex-wrap: nowrap;
-    padding: 0;             /* Remove edge padding */
-    margin: 0;              /* Remove margin */
+    padding: 0;             
+    margin: 0;              
     gap: 16px;
   }
 

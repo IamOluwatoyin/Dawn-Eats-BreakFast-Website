@@ -182,7 +182,11 @@ const LandingPage = () => {
             reliable, and right on <br />
             time.
           </p>
-          <button className="dispatch-btn">order now</button>
+          <button  className="dispatch-btn" 
+              onClick={() => {
+                setopensignUpModal(true);
+                setopensignInModal(false);
+              }}>order now</button>
         </div>
       </section>
 
