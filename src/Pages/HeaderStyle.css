@@ -24,6 +24,7 @@
 .emeka_location {
   font-size: 22px;
   color: #ff6e00;
+  font-weight: 500px;
 }
 .emeka_dropdown {
   font-size: 25px;
@@ -46,7 +47,7 @@
 .search_icon {
   position: absolute;
   left: 10px;
-  color: gray;
+  color: #ff6e00;
   font-size: 16px;
 }
 .emeka_search_bar {
