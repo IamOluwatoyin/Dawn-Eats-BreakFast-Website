@@ -24,7 +24,8 @@
 /* Top half for image */
 .image-holder {
   width: 100%;
-  height: 60%;   
+  height: 60%;  
+  position: relative; 
 }
 
 .img {
@@ -48,3 +49,5 @@
   text-align: center;
   margin: 0;
 }
+
+

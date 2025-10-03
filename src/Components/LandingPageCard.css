@@ -24,3 +24,76 @@
   object-fit: cover;
   flex-shrink: 0; 
 }
+
+@media (max-width: 768px) {
+  .carousel-container {
+    width: 100%;      /* full width of the screen */
+    max-width: 400px; /* smaller max width for mobile */
+    margin: 0 auto;
+  }
+
+  .carousel-track img {
+    width: 150px;     /* smaller images on mobile */
+    height: 225px;    /* maintain aspect ratio */
+  }
+
+  .landingpageCard-container {
+    width: 150px;     /* match image size */
+    margin: 0 5px;    /* tighter margin for smaller screens */
+  }
+}
+
+@media (max-width: 768px) {
+ .carousel-container {
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding: 0; /* remove padding */
+  }
+
+  .carousel-track {
+    display: flex;
+    gap: 10px;
+    padding: 0;  /* remove padding */
+    margin: 0;   /* remove margin */
+    width: max-content; /* shrink to fit content */
+  }
+
+  .carousel-track img {
+    width: 160px;
+    height: 160px;
+    border-radius: 16px;
+    object-fit: cover;
+    flex-shrink: 0;
+    scroll-snap-align: start;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    margin: 0;  /* remove margin */
+  }
+
+  .landingpageCard-container {
+    width: 160px;
+    margin: 0 5px; /* small gap only */
+  }
+
+  /* Hide scrollbar for cleaner look */
+  .carousel-container::-webkit-scrollbar {
+    display: none;
+  }
+  .carousel-container {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  section.BreakFast-choice-section > h1 {
+    font-size: 20px;       
+    white-space: nowrap;      
+    overflow: hidden;
+    text-overflow: ellipsis;  
+    text-align: center;       
+    width: 100%;             
+    margin: 0 auto 20px;      
+    display: block;           
+  }
+}
