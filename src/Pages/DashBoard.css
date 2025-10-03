@@ -1,0 +1,160 @@
+.content-holder{
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+  .content-container{
+    margin-top: 30px;
+  } 
+
+.content-container>h1{
+  margin-left: 30px;
+  margin-bottom: 20px;
+}
+.section2-holder {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 35px;
+  margin-top: 60px;
+  margin-bottom: 60px;
+  text-align: left;
+}
+
+.image1holder,
+.image1holder2 {
+  flex: 1; 
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;     
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 20px;
+  position: relative;
+  
+}
+
+.image1holder {
+  /* background-image: url("./Images/pan.jpg"); */
+  position: relative;
+  background-image: linear-gradient(rgba(0,0,0,0.66), rgba(0,0,0,0.664)),
+                    url("./Images/pan.jpg");
+}
+
+.image1holder2 {
+ position: relative;
+  background-image: linear-gradient(rgba(0,0,0,0.66), rgba(0,0,0,0.664)),
+                    url("./Images/deliveryBike.jpg");
+}
+
+@media screen and (max-width: 768px) {
+  /* 1. Explore Menu - scroll horizontally, no edge space */
+  .card-wrapper {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    padding: 0;             /* Remove edge padding */
+    margin: 0;              /* Remove margin */
+    gap: 16px;
+  }
+
+  .card-container {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    padding: 0;
+    gap: 16px;
+  }
+
+  .img-content-holder {
+    min-width: 180px;
+    flex: 0 0 auto;
+  }
+
+  .card-wrapper::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* 2. First section2-holder stacks vertically */
+  .section2-holder:first-of-type {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 0;
+    margin: 20px 0;
+  }
+
+  .section2-holder:first-of-type .image1holder,
+  .section2-holder:first-of-type .image1holder2 {
+    width: 100%;
+    height: 250px; /* set specific height */
+    min-height: 250px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 20px;
+    position: relative;
+    display: block;
+    overflow: hidden;
+  }
+
+  .section2-holder:first-of-type .image1holder {
+    background-image:
+      linear-gradient(rgba(0,0,0,0.66), rgba(0,0,0,0.664)),
+      url("/Images/pan.jpg");
+  }
+
+  .section2-holder:first-of-type .image1holder2 {
+    background-image:
+      linear-gradient(rgba(0,0,0,0.66), rgba(0,0,0,0.664)),
+      url("/Images/deliveryBike.jpg");
+  }
+
+  .section2-holder:first-of-type .image1holder p,
+  .section2-holder:first-of-type .image1holder2 p {
+    position: absolute;
+    top: 20px;
+    left: 10%;
+    color: white;
+    font-weight: 400;
+    font-size: 28px;
+    margin: 0;
+    z-index: 2;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+    display: block;
+  }
+  /* 3. Restaurants section (second .section2-holder) stays row layout */
+  .section2-holder:last-of-type {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 16px;
+    padding: 0 0 20px 0;
+    margin: 40px 0;
+  }
+
+  .section2-holder:last-of-type h1 {
+    flex: 0 0 100%;
+    padding-left: 16px;
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  .section2-holder:last-of-type .image1holder,
+  .section2-holder:last-of-type .image1holder2 {
+    flex: 0 0 auto;
+    min-width: 80%;
+    height: 300px;
+  }
+
+  .section2-holder:last-of-type::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+
+

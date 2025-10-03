@@ -1,0 +1,481 @@
+.orders_modal_overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.orders_modal_container {
+  background: white;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 600px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.orders_modal_header {
+  display: flex;
+  align-items: center;
+  padding: 16px 20px;
+  border-bottom: 1px solid #e5e7eb;
+  position: sticky;
+  top: 0;
+  background: white;
+  z-index: 10;
+}
+
+.orders_close_btn {
+  background: none;
+  font-size: 18px;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  color: #ff6e00;
+  transition: opacity 0.2s;
+}
+
+.orders_close_btn:hover {
+  opacity: 0.7;
+}
+
+.orders_modal_title {
+  margin-left: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #ff6e00;
+}
+
+.orders_modal_content {
+  padding: 20px;
+}
+
+.orders_section_title {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #1f2937;
+}
+
+.orders_subsection_title {
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 16px;
+  color: #6b7280;
+}
+
+.orders_delivered_section {
+  margin-bottom: 32px;
+}
+
+.order_card {
+  background: #f9fafb;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 16px;
+  border: 1px solid #e5e7eb;
+}
+
+.order_card_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 12px;
+}
+
+.order_info {
+  flex: 1;
+}
+
+.order_restaurant {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0 0 4px 0;
+  color: #1f2937;
+}
+
+.order_delivery_info {
+  font-size: 13px;
+  color: #6b7280;
+  margin: 0 0 4px 0;
+}
+
+.order_id {
+  font-size: 13px;
+  color: #6b7280;
+  margin: 0;
+}
+
+.order_amount {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.order_items {
+  margin-bottom: 12px;
+  padding-left: 0;
+}
+
+.order_item {
+  font-size: 14px;
+  color: #4b5563;
+  margin: 4px 0;
+}
+
+.order_contacts {
+  margin-bottom: 12px;
+  padding: 12px;
+  background: white;
+  border-radius: 6px;
+}
+
+.contact_row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.contact_row:last-child {
+  margin-bottom: 0;
+}
+
+.contact_label {
+  color: #6b7280;
+}
+
+.contact_value {
+  color: #3b82f6;
+  font-weight: 500;
+}
+
+.reorder_btn {
+  background: #ef4444;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  width: 100%;
+  transition: background 0.2s;
+}
+
+.reorder_btn:hover {
+  background: #dc2626;
+}
+
+.reorder_btn:active {
+  transform: scale(0.98);
+}
+
+.empty_orders_state {
+  text-align: center;
+  padding: 40px 20px;
+  color: #6b7280;
+  font-size: 16px;
+}
+
+
+.orders_modal_container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.orders_modal_container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+
+.orders_modal_container::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 3px;
+}
+
+.orders_modal_container::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+
+@media (max-width: 1024px) {
+  .orders_modal_container {
+    width: 85%;
+    max-width: 650px;
+  }
+
+  .orders_modal_content {
+    padding: 18px;
+  }
+
+  .orders_section_title {
+    font-size: 22px;
+    margin-bottom: 18px;
+  }
+
+  .orders_subsection_title {
+    font-size: 15px;
+    margin-bottom: 14px;
+  }
+
+  .order_card {
+    padding: 14px;
+  }
+
+  .order_restaurant {
+    font-size: 15px;
+  }
+
+  .order_amount {
+    font-size: 17px;
+  }
+
+  .order_item {
+    font-size: 13px;
+  }
+
+  .contact_row {
+    font-size: 13px;
+  }
+
+  .reorder_btn {
+    padding: 9px 18px;
+    font-size: 13px;
+  }
+}
+
+
+@media (max-width: 600px) {
+  .orders_modal_container {
+    width: 92%;
+    max-height: 92vh;
+    border-radius: 10px;
+  }
+
+  .orders_modal_header {
+    padding: 14px 16px;
+  }
+
+  .orders_modal_title {
+    font-size: 15px;
+  }
+
+  .orders_close_btn {
+    font-size: 22px;
+  }
+
+  .orders_modal_content {
+    padding: 16px;
+  }
+
+  .orders_section_title {
+    font-size: 20px;
+    margin-bottom: 16px;
+  }
+
+  .orders_subsection_title {
+    font-size: 14px;
+    margin-bottom: 12px;
+  }
+
+  .orders_delivered_section {
+    margin-bottom: 24px;
+  }
+
+  .order_card {
+    padding: 12px;
+    margin-bottom: 12px;
+  }
+
+  .order_card_header {
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 10px;
+  }
+
+  .order_info {
+    width: 100%;
+  }
+
+  .order_restaurant {
+    font-size: 15px;
+  }
+
+  .order_delivery_info {
+    font-size: 12px;
+  }
+
+  .order_id {
+    font-size: 12px;
+  }
+
+  .order_amount {
+    font-size: 16px;
+    align-self: flex-start;
+  }
+
+  .order_items {
+    margin-bottom: 10px;
+  }
+
+  .order_item {
+    font-size: 13px;
+    margin: 3px 0;
+  }
+
+  .order_contacts {
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+
+  .contact_row {
+    font-size: 13px;
+    margin-bottom: 6px;
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+
+  .contact_label {
+    min-width: 100%;
+    font-size: 12px;
+  }
+
+  .contact_value {
+    font-size: 13px;
+  }
+
+  .reorder_btn {
+    padding: 10px 16px;
+    font-size: 13px;
+  }
+
+  .empty_orders_state {
+    padding: 30px 16px;
+    font-size: 15px;
+  }
+}
+
+
+@media (max-width: 320px) {
+  .orders_modal_container {
+    width: 96%;
+    max-height: 95vh;
+    border-radius: 8px;
+  }
+
+  .orders_modal_header {
+    padding: 12px 14px;
+  }
+
+  .orders_modal_title {
+    font-size: 14px;
+    margin-left: 6px;
+  }
+
+  .orders_close_btn {
+    font-size: 20px;
+    padding: 2px;
+  }
+
+  .orders_modal_content {
+    padding: 14px;
+  }
+
+  .orders_section_title {
+    font-size: 18px;
+    margin-bottom: 14px;
+  }
+
+  .orders_subsection_title {
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+
+  .orders_delivered_section {
+    margin-bottom: 20px;
+  }
+
+  .order_card {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+  }
+
+  .order_card_header {
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 8px;
+  }
+
+  .order_restaurant {
+    font-size: 14px;
+    margin-bottom: 3px;
+  }
+
+  .order_delivery_info {
+    font-size: 11px;
+    margin-bottom: 3px;
+  }
+
+  .order_id {
+    font-size: 11px;
+  }
+
+  .order_amount {
+    font-size: 15px;
+  }
+
+  .order_items {
+    margin-bottom: 8px;
+  }
+
+  .order_item {
+    font-size: 12px;
+    margin: 2px 0;
+  }
+
+  .order_contacts {
+    padding: 8px;
+    margin-bottom: 8px;
+    border-radius: 4px;
+  }
+
+  .contact_row {
+    font-size: 12px;
+    margin-bottom: 5px;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .contact_label {
+    font-size: 11px;
+    color: #9ca3af;
+  }
+
+  .contact_value {
+    font-size: 12px;
+  }
+
+  .reorder_btn {
+    padding: 9px 14px;
+    font-size: 12px;
+    border-radius: 5px;
+  }
+
+  .empty_orders_state {
+    padding: 25px 14px;
+    font-size: 14px;
+  }
+  .orders_modal_container::-webkit-scrollbar {
+    width: 4px;
+  }
+}
