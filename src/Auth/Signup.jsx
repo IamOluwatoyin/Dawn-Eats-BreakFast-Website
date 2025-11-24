@@ -5,6 +5,7 @@ import { MdOutlineCancel, MdOutlineMail } from "react-icons/md";
 import VerifyEmail from "./VerifyEmail";
 import { data, Navigate, useNavigate } from "react-router-dom";
 import axios, { Axios } from "axios";
+import { toast } from "react-toastify";
 
 const Signup = ({ onclose, onSwitchToSignin }) => {
   const [showModal, setModal] = useState(false);
@@ -14,6 +15,7 @@ const Signup = ({ onclose, onSwitchToSignin }) => {
     console.log("clicked");
     setModal(!showModal);
   };
+
   const navigate = useNavigate()
   const [user, setUser] =useState({
     firstName: "",
@@ -23,6 +25,7 @@ const Signup = ({ onclose, onSwitchToSignin }) => {
   })
   const [loading, setloading] = useState(false);
   const [error, setError] = useState({});
+  const BaseUrl = import.meta.env.VITE_BaseUrl
 
   const validateForm = async (e) => {
   e.preventDefault();
@@ -42,20 +45,21 @@ const Signup = ({ onclose, onSwitchToSignin }) => {
   }
   if (!/^\d+$/.test(user.phone)) {
     newErr.phone = "Phone number must contain only digits";
-  } else if (user.phone.length !== 11) {
-    newErr.phone = "11 digit phone number is required";
+  } else if (user.phone.length !== 10) {
+    newErr.phone = "10 digit phone number is required";
   }
 
   setError(newErr);
 
-  // Stop if there are validation errors
+  // Stop if there are validation errors comment by Toyin
   if (Object.keys(newErr).length > 0) return;
 
-  //  Call your API if validation passes
+  //  Call your API if validation passes comment by Toyin
   setloading(true);
   try {
     const res = await axios.post(
-      "https://dawneats-backend.onrender.com/api/v1/auth/signup",
+      `${BaseUrl}/auth/signup`,
+      // "https://dawneats-backend.onrender.com/api/v1/auth/signup",
       user,
       {
         headers: {
@@ -63,7 +67,7 @@ const Signup = ({ onclose, onSwitchToSignin }) => {
         },
       }
     );
-
+     toast.success("Sign up successfully")
     console.log("API success:", res.data);
 
     //  Clear form
@@ -77,9 +81,9 @@ const Signup = ({ onclose, onSwitchToSignin }) => {
     //  Show VerifyEmail modal
     setModal(true);
 
-  } catch (error) {
-    console.error("API error:", error.response?.data || error.message);
-    alert(error.response?.data?.message || "Something went wrong!");
+  } catch (err) {
+    console.error("API error:", err.response?.data || err.message);
+    toast.error(err.response?.data?.message || "Something went wrong!");
   } finally {
     setloading(false);
   }
@@ -181,10 +185,10 @@ const Signup = ({ onclose, onSwitchToSignin }) => {
                 display: "flex",
                 flexDirection: "column",
                 gap: "8px",
-                color:"#FF6E00"
+               
               }}
             >
-              <h5>Email Address</h5>
+              <h5 style={{ color:"#FF6E00", }}>Email Address</h5>
               <div
                 style={{
                   width: "100%",
@@ -194,6 +198,7 @@ const Signup = ({ onclose, onSwitchToSignin }) => {
                   border: "1px solid black ",
                   borderRadius: "8px",
                   padding: " 0 10px",
+                  gap:"10px"
                 }}
                 
               >
@@ -222,10 +227,10 @@ const Signup = ({ onclose, onSwitchToSignin }) => {
                 flexDirection: "column",
                 gap: "8px",
                 marginTop: "20px",
-                color:"#FF6E00"
+                
               }}
             >
-              <h5>Phone Number</h5>
+              <h5 style={{color:"#FF6E00"}}>Phone Number</h5>
               <div
                 style={{
                   width: "100%",
@@ -289,7 +294,7 @@ const Signup = ({ onclose, onSwitchToSignin }) => {
                 type="submit"
                 // onClick={handleOpen}
               >
-                {loading ? <span>Signning....</span> : <span>Sign Up</span>}
+                {loading ? <span>loading....</span> : <span>Sign Up</span>}
               </button>
             </div>
 

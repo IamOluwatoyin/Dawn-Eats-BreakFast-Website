@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { FaLongArrowAltLeft } from "react-icons/fa";
-import { NavLink, useOutletContext } from "react-router-dom";
+import { NavLink, useNavigate, useOutletContext } from "react-router-dom";
 import TheplaceImage from "../assets/TrinityPlace.jpg";
 import "./ThePlacePage.css";
 import ThePlaceProdApi from "./ThePlaceProdApi";
@@ -8,13 +8,19 @@ import ThePlaceProdApi from "./ThePlaceProdApi";
 const ThePlacePage = () => {
   const [active, setActive] = useState("deliver");
   const { cartItems, setCartItems } = useOutletContext();
+   const navigate = useNavigate();
+   const handleNavigate = ()=>{
+    navigate("/DashBoard")
+   }
  
   return (
     <section className="the_place_hero">
       <div className="place_back_link">
-        <NavLink to="/restaurants">
-          <FaLongArrowAltLeft /> Back to restaurants
-        </NavLink>
+        <p style={{cursor:"pointer"}}>
+        <FaLongArrowAltLeft onClick={handleNavigate} /> Back to restaurants
+        
+        </p>
+         
       </div>
 
       <div className="the_place_hero_image">

@@ -21,10 +21,10 @@ const restaurantItems = [
 ];
 
 const DashBoard = () => {
-  const navigate = useNavigate(); // ✅ inside the component
+  const navigate = useNavigate(); 
 
   const handleNavigation = (route) => {
-    navigate(route); // ✅ now this works
+    navigate(route);
   };
 
   return (

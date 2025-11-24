@@ -3,6 +3,7 @@
   height: auto;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
   /* background-color: chocolate; */
 }
 
@@ -13,7 +14,6 @@
   background-color: #fff;
   display: flex;
   align-items: stretch;
-  /* justify-content: center; */
   flex-direction: column;
   /* background-color: blue; */
 }
@@ -120,9 +120,7 @@
   flex: 1;
   width: 50%;
   justify-content: flex-start;
-   /* push image toward the text side */
-  /* align-items: flex-start;    */
-    /* lift image upward */
+  
   padding-left: 0px;          
 
  }
@@ -246,10 +244,7 @@
   background-color: #FF6E00;
 }
 
-/* .dispatch-btn:hover{
-   background-color: white;
-    border: 2px solid #FF6E00;
-} */
+
 
 
 
@@ -295,10 +290,7 @@
   background-color: #FF6E00;
 }
 
-/* .logistics-btn1:hover{
-    background-color:  #e9b389;
-    border: 2px solid #FF6E00;
-} */
+
 
 .logistics-btn2{
   width: 120px;   
@@ -371,9 +363,9 @@
 }
 .About-us-content{
   width: 50%;
-  /* padding: 20px; */
+  
   display: flex;
- /* align-items: center; */
+ 
  flex-direction: column;
 }
 .About-us-content > h1 {
@@ -423,12 +415,12 @@
     font-size: 18px;
   }
   .logistics-container {
-    flex-direction: column; /* stack vertically */
+    flex-direction: column; 
     padding: 0 20px;
   }
 
   .logisticsImg-holder {
-    order: 1; /* show image first */
+    order: 1; 
     width: 100%;
     display: flex;
     justify-content: center;
@@ -441,12 +433,12 @@
   }
 
   .logistics-content {
-    order: 2; /* show text second */
+    order: 2; 
     width: 100%;
     padding: 0 10px;
   }
 
-  /* Dispatch Section */
+  
   .dispacth-container {
     flex-direction: column;
     padding: 0 20px;
@@ -463,7 +455,7 @@
   .dispatchImg-holder > img {
     width: 80%;
     height: auto;
-    border-radius: 10px; /* matches mobile image styling */
+    border-radius: 10px; 
   }
 
   .dispatch-content {
@@ -472,7 +464,7 @@
     padding: 0 10px;
   }
 
-  /* About Us Section */
+  
   .About-us-container {
     flex-direction: column;
     padding: 0 20px;
@@ -607,7 +599,7 @@
   }
 
   .Restaurant-image-holder {
-    width: 100vw; /* full viewport width */
+    width: 100vw; 
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
@@ -628,14 +620,16 @@
     margin: 0;
     box-sizing: border-box;
   }
+  .Resuarant-span{
+    display: none;
+  }
   
-  /* Optional: remove scrollbar if you want a cleaner look */
   .Restaurant-image-holder::-webkit-scrollbar {
     display: none;
   }
   .Restaurant-image-holder {
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;     /* Firefox */
+    -ms-overflow-style: none;  
+    scrollbar-width: none;     
   }
 }
 
@@ -653,25 +647,25 @@
 
   .dispatchImg-holder > img {
     width: 100%;
-    height: auto;            /* maintain aspect ratio */
-    border-radius: 16px;     /* rounded corners */
-    display: block;          /* remove inline spacing */
+    height: auto;            
+    border-radius: 16px;     
+    display: block;          
   }
 
   .dispatch-content {
     width: 100%;
-    padding: 0;              /* remove extra padding */
-    align-items: flex-start; /* left align text & button */
-    text-align: left;        /* ensure text is left aligned */
+    padding: 0;            
+    align-items: flex-start; 
+    text-align: left;       
   }
 
   .dispatch-content > h1,
   .dispatch-content > p {
-    margin-bottom: 16px;     /* slightly reduced margin */
+    margin-bottom: 16px;     
   }
 
   .dispatch-btn {
-    align-self: flex-start;  /* button aligns left */
+    align-self: flex-start;  
   }
 }
 
@@ -682,9 +676,9 @@
     gap: 20px;
   }
 
-  /* Make image appear first */
+  
   .logisticsImg-holder {
-    order: -1;       /* make image come first */
+    order: -1;       
     width: 100%;
     justify-content: center;
     margin-bottom: 15px;
@@ -693,11 +687,10 @@
   .logisticsImg-holder > img {
     width: 100%;
     height: auto;
-    /* keep existing border-radius */
   }
 
   .logistics-content {
-    order: 0;       /* default order */
+    order: 0;      
     width: 100%;
     padding-left: 0;
     display: flex;
@@ -728,8 +721,8 @@
 
 @media (max-width: 768px) {
   .About-us-container {
-    flex-direction: column;   /* stack vertically */
-    padding: 0 15px;          /* padding on sides so content doesn’t hug edges */
+    flex-direction: column;   
+    padding: 0 15px;          
     gap: 20px;
   }
 
@@ -744,7 +737,7 @@
     width: 100%;
     height: auto;
     display: block;
-    border-radius: 16px;      /* added rounded corners */
+    border-radius: 16px;      
   }
 
   .About-us-content {

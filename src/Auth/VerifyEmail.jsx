@@ -5,13 +5,14 @@ import Signup from "./Signup";
 import Signin from "./Signin";
 import { useNavigate } from "react-router-dom";
 
-const VerifyEmail = ({ onclose}) => {
+const VerifyEmail = ({ onclose }) => {
   const [opensignUpModal, setopensignUpModal] = useState(false);
   const [opensignInModal, setopensignInModal] = useState(false);
 
   const navigate = useNavigate()
   const handleClick = ()=>{
-    navigate("DashBoard")
+    navigate("/Dashboard")
+  
   }
   
   return (
@@ -46,7 +47,7 @@ const VerifyEmail = ({ onclose}) => {
             alignItems: "center",
             justifyContent:"center",
             height: "100%",
-           
+            
           }}
         >
           <input type="" 
@@ -55,7 +56,9 @@ const VerifyEmail = ({ onclose}) => {
             borderRadius:"8px",
             width: "80px",
             border: "1px solid black",
-            height: "80px",}}
+            height: "80px",
+          textAlign:"center",
+        fontSize:"20px"}}
           />
           <input type="" 
              style={{
@@ -63,7 +66,9 @@ const VerifyEmail = ({ onclose}) => {
             borderRadius:"8px",
             width: "80px",
             border: "1px solid black",
-            height: "80px",}}
+            height: "80px",
+           textAlign:"center",
+        fontSize:"20px"}}
           />
           <input type="" 
              style={{
@@ -71,7 +76,8 @@ const VerifyEmail = ({ onclose}) => {
              borderRadius:"8px",
             width: "80px",
              border: "1px solid black",
-            height: "80px",}}
+            height: "80px", textAlign:"center",
+        fontSize:"20px"}}
           />
           <input type="" 
               style={{
@@ -79,7 +85,8 @@ const VerifyEmail = ({ onclose}) => {
              borderRadius:"8px",
             width: "80px",
              border: "1px solid black",
-            height: "80px",}}
+            height: "80px", textAlign:"center",
+        fontSize:"20px"}}
            />
         </div>
 

@@ -9,18 +9,24 @@ import Signup from "../Auth/Signup";
 import Signin from "../Auth/Signin";
 import VerifyEmail from "../Auth/VerifyEmail";
 import DashBoard from "../Pages/DashBoard";
+import RouteError from "../Components/RouteError";
+import Private from "../Config/Private";
 
 const Router = () => {
   return (
     <BrowserRouter>
       <Routes>
+        <Route path="*" element={<RouteError/>}/>
         <Route path="/" element={<LandingPage />} />
-        <Route path="DashBoard" element={<DashBoard />} />
+       
         
 
-        <Route element={<Layout />}>
+        <Route element={<Private />}>
+         <Route path="DashBoard" element={<DashBoard />} />
+         <Route element={<Layout/>}>
           <Route path="theplacepage" element={<ThePlacePage />} />
           <Route path="dinepage" element={<DinePage />} />
+         </Route>
         </Route>
       </Routes>
     </BrowserRouter>

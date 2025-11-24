@@ -21,7 +21,6 @@
   width: 100%;
   max-width: 32rem;
   padding: 1.5rem;
-  position: relative;
   /* overflow-y: hidden; */
   display: flex;
   flex-direction: column;
