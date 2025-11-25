@@ -3,11 +3,10 @@ import { CiLocationOn } from "react-icons/ci";
 import { RiArrowDropDownLine } from "react-icons/ri";
 import { FaShoppingCart, FaUser, FaSearch } from "react-icons/fa";
 import emekaheaderlogo from "../assets/IMG_4853.JPG";
-import CartModal1 from "../Components/Modal1";
-import Modal4 from "../Components/Modal4"
+import Modal4 from "../components/Modal4"
 import "./HeaderStyle.css";
 import { useNavigate } from "react-router-dom";
-
+import CartModal from "../components/Modal1";
 const Header = ({ cartItems = [], setCartItems }) => {
   const [showModal, setShowModal] = useState(false);
   const [profileOpen, setProfileOpen] = useState(false);
@@ -56,7 +55,7 @@ const Header = ({ cartItems = [], setCartItems }) => {
       </header>
 
       {showModal && (
-        <CartModal1
+        <cartModal
           cartItems={cartItems}
           setCartItems={setCartItems}
           onClose={() => setShowModal(false)}
