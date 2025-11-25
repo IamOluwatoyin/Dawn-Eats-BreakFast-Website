@@ -3,8 +3,8 @@ import { CiLocationOn } from "react-icons/ci";
 import { RiArrowDropDownLine } from "react-icons/ri";
 import { FaShoppingCart, FaUser, FaSearch } from "react-icons/fa";
 import emekaheaderlogo from "../assets/IMG_4853.JPG";
-import CartModal1 from "../components/Modal1";
-import Modal4 from "../Components/Modal4";
+import CartModal1 from "../Components/Modal1";
+import Modal4 from "../Components/Modal4"
 import "./HeaderStyle.css";
 import { useNavigate } from "react-router-dom";
 
