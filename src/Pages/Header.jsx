@@ -3,10 +3,10 @@ import { CiLocationOn } from "react-icons/ci";
 import { RiArrowDropDownLine } from "react-icons/ri";
 import { FaShoppingCart, FaUser, FaSearch } from "react-icons/fa";
 import emekaheaderlogo from "../assets/IMG_4853.JPG";
-import Modal4 from "../components/Modal4"
+import Modal4 from "../Components/Modal4"
 import "./HeaderStyle.css";
 import { useNavigate } from "react-router-dom";
-import CartModal from "../components/Modal1";
+import CartModal from "./Modal1";  
 const Header = ({ cartItems = [], setCartItems }) => {
   const [showModal, setShowModal] = useState(false);
   const [profileOpen, setProfileOpen] = useState(false);
@@ -55,7 +55,7 @@ const Header = ({ cartItems = [], setCartItems }) => {
       </header>
 
       {showModal && (
-        <cartModal
+        <CartModal
           cartItems={cartItems}
           setCartItems={setCartItems}
           onClose={() => setShowModal(false)}
@@ -85,6 +85,5 @@ const Header = ({ cartItems = [], setCartItems }) => {
     </>
   );
 };
-// toyin
-// breakfastapp
+
 export default Header;
