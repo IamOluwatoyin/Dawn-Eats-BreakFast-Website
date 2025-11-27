@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import cartmodalimage from "../assets/headerlogo.JPG";
 import { IoCloseOutline } from "react-icons/io5";
 import { RiDeleteBin6Line } from "react-icons/ri";
-import CheckoutModal from "../Components/Modal2"; 
+import CheckoutModal from "./Modal2"; 
 import "./Modal1Style.css";
 
 const CartModal = ({
