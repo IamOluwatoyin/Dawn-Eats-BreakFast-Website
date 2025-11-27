@@ -4,8 +4,8 @@ import { RiShieldCheckFill } from "react-icons/ri";
 import { TbCopy } from "react-icons/tb";
 import logo from "../assets/headerlogo.JPG"; 
 import "./Modal5Style.css";
-import OrderConfirmationModal from "./Modal6";
-import OrdersModal from "./Modal7";
+import OrderConfirmationModal from "./OrderConfirmationModal";
+import OrdersModal from "./OrdersModal";
 
 const BankTransferModal = ({ 
   amount = "0.00", 

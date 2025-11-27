@@ -1,6 +1,6 @@
 import React from "react";
 import { IoCloseOutline } from "react-icons/io5";
-import "./Modal7Style.css";
+import "./OrderModal.css"
 
 const OrdersModal = ({ onClose, deliveredOrder }) => {
   return (

@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import { IoCloseOutline, IoArrowBack, IoChevronDown } from "react-icons/io5";
 import { FaUniversity } from "react-icons/fa";
 import { FaMapMarkerAlt } from "react-icons/fa";
-import "./Modal2Style.css";
-import PaymentModal from "../Components/Modal3";
-import BankTransferModal from "../Components/Modal5";
+import "./CheckoutModal.css";
+import PaymentModal from "./PaymentModal";
+import BankTransferModal from "./BankTransferModal";
 
 const CheckoutModal = ({ cartItems, onClose, onBack }) => {
   const [showPaymentModal, setShowPaymentModal] = useState(false);

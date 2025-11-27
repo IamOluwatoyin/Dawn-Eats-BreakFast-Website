@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import cartmodalimage from "../assets/headerlogo.JPG";
 import { IoCloseOutline } from "react-icons/io5";
 import { RiDeleteBin6Line } from "react-icons/ri";
-import CheckoutModal from "./Modal2"; 
-import "./Modal1Style.css";
+import CheckoutModal from "./CheckoutModal";
+import "./CartModal.css";
 
 const CartModal = ({
   cartItems,
@@ -26,15 +26,14 @@ const CartModal = ({
   };
 
   const handleConfirmOrder = () => {
-    setCartItems([]); 
+    setCartItems([]);
     setShowCheckoutModal(false);
-    onClose(); 
+    onClose();
     // alert("Order confirmed!");
   };
 
   const handleBackToCart = () => {
-    setShowCheckoutModal(false); 
-    
+    setShowCheckoutModal(false);
   };
 
   return (
@@ -81,11 +80,17 @@ const CartModal = ({
                     <RiDeleteBin6Line />
                   </button>
                   <div className="emeka_cart_item_quantity">
-                    <button className="emeka_qty_btn" onClick={() => dec(item.id)}>
+                    <button
+                      className="emeka_qty_btn"
+                      onClick={() => dec(item.id)}
+                    >
                       -
                     </button>
                     <span className="emeka_qty_value">{item.quantity}</span>
-                    <button className="emeka_qty_btn" onClick={() => inc(item.id)}>
+                    <button
+                      className="emeka_qty_btn"
+                      onClick={() => inc(item.id)}
+                    >
                       +
                     </button>
                   </div>
@@ -95,9 +100,10 @@ const CartModal = ({
           </div>
 
           <div className="emeka_cart_modal_footer">
-            <button className="emeka_proceed_btn" 
-            onClick={handleProceed}
-            disabled={cartItems.length === 0} 
+            <button
+              className="emeka_proceed_btn"
+              onClick={handleProceed}
+              disabled={cartItems.length === 0}
             >
               Proceed
             </button>
@@ -113,10 +119,10 @@ const CartModal = ({
           cartItems={cartItems}
           onClose={() => {
             setShowCheckoutModal(false);
-            onClose(); 
+            onClose();
           }}
           onProceed={handleConfirmOrder}
-          onBack={handleBackToCart} 
+          onBack={handleBackToCart}
         />
       )}
     </>
@@ -124,24 +130,6 @@ const CartModal = ({
 };
 
 export default CartModal;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // import React from "react";
 // import cartmodalimage from "../assets/headerlogo.JPG";
@@ -152,9 +140,9 @@ export default CartModal;
 // const CartModal = ({
 //   cartItems,
 //   onClose,
-//   onRemoveItem, 
-//   onIncreaseQty, 
-//   onDecreaseQty, 
+//   onRemoveItem,
+//   onIncreaseQty,
+//   onDecreaseQty,
 // }) => {
 //   const handleRemove = (id) => onRemoveItem && onRemoveItem(id);
 //   const inc = (id) => onIncreaseQty && onIncreaseQty(id);

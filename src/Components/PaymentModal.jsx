@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { IoCloseOutline } from "react-icons/io5";
 import { FaCreditCard, FaUniversity } from "react-icons/fa";
 import logo from "../assets/headerlogo.JPG"; 
-import "./Modal3Style.css";
+import "./PaymentModal.css"
 
 const labelMap = {
   card: "Pay with card",
