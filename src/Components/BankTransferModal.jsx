@@ -3,7 +3,7 @@ import { IoCloseOutline } from "react-icons/io5";
 import { RiShieldCheckFill } from "react-icons/ri";
 import { TbCopy } from "react-icons/tb";
 import logo from "../assets/headerlogo.JPG"; 
-import "./Modal5Style.css";
+import "./BankTransferModal.css";
 import OrderConfirmationModal from "./OrderConfirmationModal";
 import OrdersModal from "./OrdersModal";
 
