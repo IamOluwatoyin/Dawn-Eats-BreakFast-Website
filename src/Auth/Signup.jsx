@@ -59,7 +59,6 @@ const Signup = ({ onclose, onSwitchToSignin }) => {
   try {
     const res = await axios.post(
       `${BaseUrl}/auth/signup`,
-      // "https://dawneats-backend.onrender.com/api/v1/auth/signup",
       user,
       {
         headers: {
@@ -70,14 +69,12 @@ const Signup = ({ onclose, onSwitchToSignin }) => {
      toast.success("Sign up successfully")
     console.log("API success:", res.data);
 
-    //  Clear form
-    setUser({
-      firstName: "",
-      lastName: "",
-      email: "",
-      phone: "",
-    });
+   
+     const userId = res.data?.data?._id;
 
+   
+    localStorage.setItem("pendingUserId", userId);
+    localStorage.setItem("pendingEmail", user.email); 
     //  Show VerifyEmail modal
     setModal(true);
 
@@ -94,7 +91,8 @@ const Signup = ({ onclose, onSwitchToSignin }) => {
     <>
 
       {showModal ? (
-        <VerifyEmail onclose={onclose} />
+        <VerifyEmail onclose={onclose} userId={localStorage.getItem("pendingUserId")}
+      email={localStorage.getItem("pendingEmail")}/>
       ) : (
         <div className="form-wrapper">
           <form className="form-holder"  onSubmit={validateForm}>
