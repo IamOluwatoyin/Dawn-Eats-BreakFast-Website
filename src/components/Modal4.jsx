@@ -4,7 +4,7 @@ import { FaUserAlt } from "react-icons/fa";
 import { MdLogout } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
 import GetId from "../Auth/GetId";
-const Modal4 = () => {
+export const Modal4 = () => {
   const navigate = useNavigate();
 //  const handleNavigate = ()=>{
 //   navigate("/")
@@ -27,4 +27,3 @@ const Modal4 = () => {
   );
 };
 
-export default Modal4;

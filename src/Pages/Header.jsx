@@ -6,11 +6,10 @@ import emekaheaderlogo from "../assets/IMG_4853.JPG";
 import "./HeaderStyle.css";
 import { useNavigate } from "react-router-dom";
 import CartModal from "../Components/CartModal"
-import Modal4 from "../Components/Modal4";
+import { Modal4 } from "../Components/Modal4" ;
 const Header = ({ cartItems = [], setCartItems }) => {
   const [showModal, setShowModal] = useState(false);
   const [profileOpen, setProfileOpen] = useState(false);
-
   const navigate = useNavigate();
 
   return (
