@@ -6,7 +6,7 @@ import emekaheaderlogo from "../assets/IMG_4853.JPG";
 import "./HeaderStyle.css";
 import { useNavigate } from "react-router-dom";
 import CartModal from "../Components/CartModal"
-import { Modal4 } from "../Components/Modal4" ;
+import { Profile } from "../Components/Profile" ;
 const Header = ({ cartItems = [], setCartItems }) => {
   const [showModal, setShowModal] = useState(false);
   const [profileOpen, setProfileOpen] = useState(false);
@@ -47,7 +47,7 @@ const Header = ({ cartItems = [], setCartItems }) => {
               className="profile-dropdown"
               onMouseLeave={() => setProfileOpen(false)}
             >
-              <Modal4 />
+              <Profile />
             </div>
           ) : null}
         </div>
