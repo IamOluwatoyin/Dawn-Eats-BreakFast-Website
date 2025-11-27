@@ -19,10 +19,15 @@ import { SiGmail } from "react-icons/si";
 import Header from "./Header";
 import Footer from "../Components/Footer";
 import { menuItems } from "../utils";
+import { useNavigate } from "react-router-dom";
 
 const DinePage = () => {
   const [toggleswitch, setToggleSwitch] = useState("deliver");
-  const [profileOpen, setProfileOpen] = useState(false);
+
+  const navigate = useNavigate()
+  const handleNavigate = ()=>{
+    navigate("/DashBoard")
+   }
   return (
     <>
       {/* <header className="header">
@@ -64,7 +69,7 @@ const DinePage = () => {
 
       <a href="#" className="back-button">
         <span className="back-arrow">
-          <FaArrowLeftLong />
+          <FaArrowLeftLong onClick={handleNavigate} />
         </span>
         Back to restaurants
       </a>

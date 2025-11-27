@@ -48,7 +48,7 @@ const LandingPageCard = () => {
             <p
               style={{
                 textAlign: "center",
-                fontSize: "20px",
+                fontSize: "30px",
                 marginTop: "20px",
               }}
             >

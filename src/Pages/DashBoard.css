@@ -1,15 +1,15 @@
-.content-holder{
+.content-holder {
   width: 100%;
   height: auto;
   display: flex;
   flex-direction: column;
 }
 
-  .content-container{
-    margin-top: 30px;
-  } 
+.content-container {
+  margin-top: 30px;
+}
 
-.content-container>h1{
+.content-container > h1 {
   margin-left: 30px;
   margin-bottom: 20px;
 }
@@ -27,79 +27,73 @@
 
 .image1holder,
 .image1holder2 {
-  flex: 1; 
+  flex: 1;
   height: 300px;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-size: cover;     
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   border-radius: 20px;
   position: relative;
-  
 }
 
-
 .image1holder {
- 
   position: relative;
-  background-image: linear-gradient(rgba(0,0,0,0.66), rgba(0,0,0,0.664)),
-                    url("./Images/pan.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.66), rgba(0, 0, 0, 0.664)),
+    url("./Images/pan.jpg");
 }
 
 .image1holder2 {
- position: relative;
-  background-image: linear-gradient(rgba(0,0,0,0.66), rgba(0,0,0,0.664)),
-                    url("./Images/deliveryBike.jpg");
+  position: relative;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.66), rgba(0, 0, 0, 0.664)),
+    url("./Images/deliveryBike.jpg");
 }
 
 .Header {
-    font-size: 20px;
-    
-    font-weight: 30px;
-    margin-bottom: 20px;
-    
+  font-size: 20px;
+
+  font-weight: 30px;
+  margin-bottom: 20px;
 }
- .Header > h1{
-    margin-left: 30px;
+.Header > h1 {
+  margin-left: 30px;
   margin-bottom: 20px;
 }
 .restaurant-image {
-	width: 700px;
-	height: 400px;
-	object-fit: cover;
-	border-radius: 10px;
-	margin-bottom: 10px;
+  width: 700px;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 10px;
 }
 
 .restaurant-text {
-	font-size: xx-large;
-	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-weight: 30px;
+  font-size: xx-large;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 30px;
 }
 
 .restaurant-row {
-	display: flex;
-	flex-direction: row;
-    justify-content: center;
-    justify-content: space-around;
-	gap: 70px;
-	align-items: flex-start;
-  
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  justify-content: space-around;
+  gap: 70px;
+  align-items: flex-start;
 }
 
-.restaurant-image{
+.restaurant-image {
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
 
 @media screen and (max-width: 768px) {
-  /* 1. Explore Menu - scroll horizontally, no edge space */
   .card-wrapper {
     overflow-x: auto;
     flex-wrap: nowrap;
-    padding: 0;             
-    margin: 0;              
+    padding: 0;
+    margin: 0;
     gap: 16px;
   }
 
@@ -119,7 +113,6 @@
     display: none;
   }
 
-  /* 2. First section2-holder stacks vertically */
   .section2-holder:first-of-type {
     display: flex;
     flex-direction: column;
@@ -131,7 +124,7 @@
   .section2-holder:first-of-type .image1holder,
   .section2-holder:first-of-type .image1holder2 {
     width: 100%;
-    height: 250px; /* set specific height */
+    height: 250px;
     min-height: 250px;
     background-size: cover;
     background-position: center;
@@ -143,14 +136,12 @@
   }
 
   .section2-holder:first-of-type .image1holder {
-    background-image:
-      linear-gradient(rgba(0,0,0,0.66), rgba(0,0,0,0.664)),
+    background-image: linear-gradient(rgba(0, 0, 0, 0.66), rgba(0, 0, 0, 0.664)),
       url("/Images/pan.jpg");
   }
 
   .section2-holder:first-of-type .image1holder2 {
-    background-image:
-      linear-gradient(rgba(0,0,0,0.66), rgba(0,0,0,0.664)),
+    background-image: linear-gradient(rgba(0, 0, 0, 0.66), rgba(0, 0, 0, 0.664)),
       url("/Images/deliveryBike.jpg");
   }
 
@@ -164,10 +155,10 @@
     font-size: 28px;
     margin: 0;
     z-index: 2;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
     display: block;
   }
-  /* 3. Restaurants section (second .section2-holder) stays row layout */
+
   .section2-holder:last-of-type {
     flex-direction: row;
     flex-wrap: nowrap;
@@ -195,6 +186,3 @@
     display: none;
   }
 }
-
-
-

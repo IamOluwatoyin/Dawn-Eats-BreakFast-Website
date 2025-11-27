@@ -11,6 +11,7 @@ const Signin = ({ onclose, onSwitchToSignup }) => {
   const [error, setError] = useState({});
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
+  const BaseUrl = import.meta.env.VITE_BaseUrl
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -32,7 +33,7 @@ const Signin = ({ onclose, onSwitchToSignup }) => {
 
     try {
       const res = await axios.post(
-        "https://dawneats-backend.onrender.com/api/v1/auth/signin",
+        `${BaseUrl}/auth/signin`,
         { email },
         {
           headers: {
@@ -43,25 +44,30 @@ const Signin = ({ onclose, onSwitchToSignup }) => {
 
       console.log("SUCCESS:", res.data);
 
-      // store user and token
+      // store user and token commentbyToyin
       localStorage.setItem("userId", res.data.data._id);
       localStorage.setItem("token", res.data.token);
 
-      // ✅ open verify email modal
+      
       setModal(true);
+    
 
     } catch (error) {
-      console.error("API error:", error.response?.data || error.message);
+      
       alert(error.response?.data?.message || "Something went wrong!");
+      console.error("API error:", error.response?.data || error.message);
     } finally {
       setLoading(false);
     }
   };
 
+
+
   return (
     <>
       {showModal ? (
-        <VerifyEmail onclose={onclose} />
+        <VerifyEmail onclose={onclose}  />
+        
       ) : (
         <div className="Signin-wrapper">
           <form className="signin-holder" onSubmit={handleSubmit}>
@@ -98,6 +104,8 @@ const Signin = ({ onclose, onSwitchToSignup }) => {
                   border: "1px solid black",
                   borderRadius: "8px",
                   padding: "0 10px",
+                  fontSize:"30px"
+                  
                 }}
               >
                 <MdOutlineMail style={{ fontSize: "18px" }} />
@@ -107,6 +115,7 @@ const Signin = ({ onclose, onSwitchToSignup }) => {
                     height: "100%",
                     outline: "none",
                     border: "none",
+                    textAlign:"center"
                   }}
                   type="email"
                   value={email}
@@ -128,7 +137,7 @@ const Signin = ({ onclose, onSwitchToSignup }) => {
                 }}
                 type="submit"
               >
-                {loading ? <span>Signing in...</span> : <span>Sign In</span>}
+                {loading ? <span>loading...</span> : <span>Sign In</span>}
               </button>
             </div>
 

@@ -3,19 +3,21 @@ import { CiLocationOn } from "react-icons/ci";
 import { RiArrowDropDownLine } from "react-icons/ri";
 import { FaShoppingCart, FaUser, FaSearch } from "react-icons/fa";
 import emekaheaderlogo from "../assets/IMG_4853.JPG";
-import CartModal from "../Components/CartModal";
-import Modal4 from "../Components/Modal4";
 import "./HeaderStyle.css";
-
+import { useNavigate } from "react-router-dom";
+import CartModal from "../Components/CartModal"
+import Modal4 from "../Components/Modal4";
 const Header = ({ cartItems = [], setCartItems }) => {
   const [showModal, setShowModal] = useState(false);
   const [profileOpen, setProfileOpen] = useState(false);
+
+  const navigate = useNavigate();
 
   return (
     <>
       <header className="emeka_header">
         <div className="emeka_header_left">
-          <img src={emekaheaderlogo} alt="Logo" className="emeka_header_logo" />
+          <img src={emekaheaderlogo} alt="Logo" className="emeka_header_logo" onClick={()=>navigate("/")}/>
           <span className="location">
             <CiLocationOn className="emeka_location" /> Olodi Apapa
             <RiArrowDropDownLine className="emeka_dropdown" />

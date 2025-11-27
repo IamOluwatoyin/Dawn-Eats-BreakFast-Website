@@ -3,8 +3,8 @@ import { IoCloseOutline, IoArrowBack, IoChevronDown } from "react-icons/io5";
 import { FaUniversity } from "react-icons/fa";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import "./Modal2Style.css";
-import PaymentModal from "../components/Modal3";
-import BankTransferModal from "../components/Modal5";
+import PaymentModal from "../Components/Modal3";
+import BankTransferModal from "../Components/Modal5";
 
 const CheckoutModal = ({ cartItems, onClose, onBack }) => {
   const [showPaymentModal, setShowPaymentModal] = useState(false);
@@ -26,7 +26,10 @@ const CheckoutModal = ({ cartItems, onClose, onBack }) => {
 
   return (
     <div className="checkout_modal_overlay" onClick={onClose}>
-      <div className="checkout_modal_container" onClick={(e) => e.stopPropagation()}>
+      <div
+        className="checkout_modal_container"
+        onClick={(e) => e.stopPropagation()}
+      >
         <div className="checkout_modal_header">
           <div className="checkout_header_icons">
             <button className="checkout_back_btn" onClick={onBack}>
@@ -49,7 +52,9 @@ const CheckoutModal = ({ cartItems, onClose, onBack }) => {
                 className="checkout_option_btn"
                 onClick={() => setShowPaymentModal(true)}
               >
-                {selectedPaymentMethod ? labelMap[selectedPaymentMethod] : "Choose"}
+                {selectedPaymentMethod
+                  ? labelMap[selectedPaymentMethod]
+                  : "Choose"}
               </button>
             </div>
 
