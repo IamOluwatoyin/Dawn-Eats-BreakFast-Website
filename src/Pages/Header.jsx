@@ -3,7 +3,7 @@ import { CiLocationOn } from "react-icons/ci";
 import { RiArrowDropDownLine } from "react-icons/ri";
 import { FaShoppingCart, FaUser, FaSearch } from "react-icons/fa";
 import emekaheaderlogo from "../assets/IMG_4853.JPG";
-import CartModal1 from "../components/Modal1";
+import CartModal from "../Components/Modal1";
 import Modal4 from "../Components/Modal4";
 import "./HeaderStyle.css";
 
@@ -53,7 +53,7 @@ const Header = ({ cartItems = [], setCartItems }) => {
       </header>
 
       {showModal && (
-        <CartModal1
+        <CartModal
           cartItems={cartItems}
           setCartItems={setCartItems}
           onClose={() => setShowModal(false)}

@@ -16,7 +16,6 @@ import {
 } from "react-icons/fa6";
 import { MdShoppingCart } from "react-icons/md";
 import { SiGmail } from "react-icons/si";
-import Modal4 from "../Components/Modal4";
 import Header from "./Header";
 import Footer from "../Components/Footer";
 import { menuItems } from "../utils";
