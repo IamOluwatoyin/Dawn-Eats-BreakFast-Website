@@ -1,5 +1,5 @@
 import React from "react";
-import "./Modal4Style.css";
+import "./Profile.css";
 import { FaUserAlt } from "react-icons/fa";
 import { MdLogout } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
